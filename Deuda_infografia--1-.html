@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title>image</title>
+<!-- Material Design fonts -->
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script src="Deuda_infografia--1-_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Deuda_infografia--1-_files/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Deuda_infografia--1-_files/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="Deuda_infografia--1-_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="Deuda_infografia--1-_files/navigation-1.1/tabsets.js"></script>
+<script src="Deuda_infografia--1-_files/navigation-1.1/codefolding.js"></script>
+<link href="Deuda_infografia--1-_files/magnific-popup-1.1.0/magnific-popup.css" rel="stylesheet" />
+<script src="Deuda_infografia--1-_files/magnific-popup-1.1.0/jquery.magnific-popup.min.js"></script>
+<link href="Deuda_infografia--1-_files/bootstrap_material-0.1/bootstrap-material-design.min.css" rel="stylesheet" />
+<link href="Deuda_infografia--1-_files/bootstrap_material-0.1/ripples.min.css" rel="stylesheet" />
+<script src="Deuda_infografia--1-_files/bootstrap_material-0.1/material.min.js"></script>
+<script src="Deuda_infografia--1-_files/bootstrap_material-0.1/ripples.min.js"></script>
+<link href="Deuda_infografia--1-_files/material-0.1/material.css" rel="stylesheet" />
+<script src="Deuda_infografia--1-_files/material-0.1/material.js"></script>
+<script src="Deuda_infografia--1-_files/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="Deuda_infografia--1-_files/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="Deuda_infografia--1-_files/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="Deuda_infografia--1-_files/typedarray-0.1/typedarray.min.js"></script>
+<link href="Deuda_infografia--1-_files/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="Deuda_infografia--1-_files/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="Deuda_infografia--1-_files/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="Deuda_infografia--1-_files/plotly-main-1.52.2/plotly-latest.min.js"></script>
+
+
+
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("toc");
+});
+</script>
+
+<!-- code folding -->
+
+</head>
+
+<body>
+
+<div class="header-panel shadow z-2">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-3">
+        <div id="header">
+    <h1 class="title"><img src="logo-iii.png" alt="image" /></h1>
+                </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid main-container">
+    <div class="row">
+      <nav class="col-xs-3 menu">
+        <div id="toc">
+        <ul>
+        <li><a href="#evolución-y-composición"><b>Evolución y composición</b></a></li>
+        <li><a href="#costo-y-perspectivas"><b>Costo y perspectivas</b></a></li>
+        <li><a href="#panorama-internacional"><b>Panorama Internacional</b></a></li>
+        </ul>
+        </div>
+        
+        
+        
+      </nav>
+     <div class="pages col-xs-9">
+     <div class="row">
+       <div class="col-xs-10">
+
+
+
+<style type="text/css">
+/*"En este chunk se recoge el documento css, que sirve para establecer condiciones de formato en el caso de los documentos en HTML. Por tratarse de un chunk de este tipo, los comentorios se escriben dentro de asteriscos y barras (de este modo /*""*/, las comillas se agregan para diferenciar el color del comentario)"*/
+  
+/*----------------------------------------------------*/
+/*"    <<-----  Algunos insumos y notas  ----->>     "*/  
+/*----------------------------------------------------*/
+
+/*"<<<---- Colores: 
+ Página para determinar el código HEX: https://urldefense.com/v3/__https://www.rapidtables.com/convert/color/rgb-to-hex.html*22*/__;JSo!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6-pxxPuo$    
+  
+/*"<<<---- Cuadros: 
+  Bordes redondos: https://urldefense.com/v3/__https://www.w3schools.com/css/css_border_rounded.asp__;!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6GgPH0n0$ 
+  Barras en los bordes: https://urldefense.com/v3/__https://www.w3schools.com/css/css_border_shorthand.asp__;!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6UWKqHgE$  "*/
+  
+/*"Formato del eje x: https://urldefense.com/v3/__https://plotly.com/r/tick-formatting/*22*/__;JSo!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea64sMdHCs$   
+  
+/*"Codigo para knit el documento"
+#render("Deuda_infografia.Rmd", html_document(pandoc_args = "--self-contained"))
+#browseURL("Deuda_infografia.html")
+*/  
+  
+/*-------------------------------------------------------------*/
+/*"    <<---Modificando el formato de la plantilla ---->>     "*/  
+/*-------------------------------------------------------------*/
+  
+/*"Escondiendo la barra de navegación que viene predetenminada con el paquete rmdformats"*/  
+  .navbar{visibility: hidden}
+
+/* "Cambiando el color del panel o barra de arriba" */
+.header-panel { background-color: #2D5E71;          /*Color del fondo */ }
+
+/* "Modificando el texto del panel o barra de arriba" */
+h1.title {
+  font-family: Gill Sans MT;       /*"Fuente del texto"*/
+  font-size: 15pt;                /*"Tamaño del texto"*/
+  font-weight: bold;             /*"Texto en negrita"*/
+}
+
+/* "Poniendo el texto del titulo 1 (h1 o #) en blanco, porque la plantilla agrega en cada pagina el nombre que tienen en el medu de la izquierda" */
+.pages h1 {
+  color: white   /*"Color de texto"*/ }  
+  
+/*"Cambiando la fuente y tamaño del texto para el cuerpo" */
+body{
+  font-family: Gill Sans MT;          /*"Fuente del texto"*/
+  font-size: 9.2pt;                  /*"Tamaño del texto"*/
+  line-height: 0.6;                 /*"Espacio interlineado"*/ }
+
+/* "Poniendo el texto del titulo 1 (El que aparece antes del titulo de la infografia) en blanco y tamaño uno" */
+  h1{
+  font-family: Gill Sans MT;       /*"Fuente del texto"*/
+  font-size: 1.3pt;                 /*"Tamaño del texto"*/
+  font-weight: bold;             /*"Texto en negrita"*/
+  color:white;                  /*"Color de texto"*/     }
+
+/*"Creando funcion para caja texto"*/
+#example1 {
+  padding: 10px;                          /*"Margenes"*/
+  line-height: 1.2;                      /*"Espacio interlineado"*/
+  font-family: Gill Sans MT;            /*"Fuente del texto"*/
+  border-left: 20px solid #2D5E71;     /*"Tamaño de la linea de color a la izquierda"*/  
+  background-color: #EEEEEE;          /*"Color del fondo"*/
+  font-size: 16;                     /*"Tamaño del texto"*/
+  border-radius: 8px;               /*"Tamaño de la curva del cuadro en las esquinas"*/
+  font-weight: 700;                /*"Texto en negrita"*/
+  widht: 60px;  
+  text-align: justify;
+  text-justify: inter-word;                    /*"Texto justificado"*/   
+  color:  black;
+}
+
+/*"El </div> que aparece debajo de este código sirvió para ampliar el tamaño de la hoja en que estaba contenido el texto y los gráficos."*/
+
+</style>
+</div>
+<div id="evolución-y-composición" class="section level1">
+<h1><b>Evolución y composición</b></h1>
+<br> <br> <f size="6"><s style="color:white">/</f></s>
+<p align="center">
+<font size="6.0"><span style="color: #2D5E71;"><strong>Panorama general de la deuda del SPNF</strong></span></font>
+</p>
+</wk>
+<p align="center">
+<font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Departamento de Programación Monetaria y Estudios Económicos</span></font>
+</p>
+</wk>
+<p align="center">
+<font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Subdirección de Asuntos Fiscales</span></font>
+</p>
+</wk>
+<p align="center">
+<font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Abril 2021</span></font>
+</p>
+<p></wk> <br> <br></p>
+<div id="example1">
+<p align="justify">
+<font size="4.0"><span style="color: black;"> En 2020, y como consecuencia de la crisis sanitaria y de las necesidades de financiamiento presupuestadas, la deuda del SPNF como porcentaje del PIB aumentó en 16.2 puntos porcentuales, hasta alcanzar 56.6% del PIB.
+</p>
+</div>
+<p><br></p>
+<p><br></p>
+<div align="center">
+<div id="htmlwidget-b1b745a43d6f9bf527e6" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b1b745a43d6f9bf527e6">{"x":{"visdat":{"37b870d634dc":["function () ","plotlyVisDat"]},"cur_data":"37b870d634dc","attrs":{"37b870d634dc":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"bar","name":"Deuda SPNF","marker":{"color":"#7EB4C0"},"inherit":true},"37b870d634dc.1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Endeudamiento neto SPNF","yaxis":"y2","line":{"color":"#325E68","width":4},"marker":{"color":"#325E68","size":8,"line":{"color":"#325E68","width":3}},"inherit":true}},"layout":{"width":700,"margin":{"b":100,"l":55,"t":30,"r":20},"title":"<b>Deuda pública y endeudamiento neto del SPNF<\/b> <br />(%  PIB)","font":{"family":"Gill Sans MT","size":13},"hovermode":"compare","xaxis":{"domain":[0,1],"automargin":true,"title":"","tickangle":270,"type":"category","categoryorder":"array","categoryarray":["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"]},"yaxis":{"domain":[0,1],"automargin":false,"side":"left","title":"Deuda SPNF","showgrid":false,"zeroline":false,"range":[0,60]},"yaxis2":{"side":"right","overlaying":"y","title":"Endeudamiento neto SPNF","showgrid":false,"zeroline":false,"automargin":true,"range":[-8,1]},"legend":{"orientation":"h","x":0.32,"y":-0.14},"annotations":[{"text":"Fuente: BCRD  y Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":-0.05,"yref":"paper","y":-0.3},{"text":"Fuente: BCRD  y Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":-0.05,"yref":"paper","y":-0.3},{"text":"Fuente: BCRD  y Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":-0.05,"yref":"paper","y":-0.3}],"showlegend":true},"source":"A","config":{"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[13.45,15.67,17.08,27.56,28.4,19,19.46,17.14,23.27,27.43,27.5,28.57,32.04,36.99,35.4,33.9,35.32,36.92,37.6,40.43,56.48],"type":"bar","name":"Deuda SPNF","marker":{"color":"#7EB4C0","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[-1.15,-1.8,-1.68,-4.5,-3.08,-0.26,0.12,0.34,-3.8,-2.75,-3.01,-3.28,-6.41,-3.92,-3.49,-0.26,-2.68,-2.78,-2.28,-2.32,-7.59],"type":"scatter","mode":"lines+markers","name":"Endeudamiento neto SPNF","yaxis":"y2","line":{"color":"#325E68","width":4},"marker":{"color":"#325E68","size":8,"line":{"color":"#325E68","width":3}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="example1">
+<p>
+En 2020, este incremento se explica por el mayor endeudamiento del SPNF, la depreciación cambiaria y la contracción del PIB. En este sentido, solo el 38.2% del aumento de la deuda se debió al resultado primario deficitario del SPNF.
+</p>
+</div>
+<p><br></p>
+<p><br></p>
+<div align="center">
+<div id="htmlwidget-acf6b77bae6da38f4deb" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-acf6b77bae6da38f4deb">{"x":{"visdat":{"37b81a243929":["function () ","plotlyVisDat"]},"cur_data":"37b81a243929","attrs":{"37b81a243929":{"x":{},"y":{},"marker":{"color":"#519BA5"},"name":"Resultado primario","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"37b81a243929.1":{"x":{},"y":{},"marker":{"color":"#6ABED8"},"name":"Tasa de interés real","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"37b81a243929.2":{"x":{},"y":{},"marker":{"color":"#FFBE86"},"name":"Crecimiento real PIB","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"37b81a243929.3":{"x":{},"y":{},"marker":{"color":"#83B386"},"name":"Depreciación del tipo de cambio","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"37b81a243929.4":{"x":{},"y":{},"marker":{"color":"#568C5A"},"name":"Residual","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"37b81a243929.5":{"x":{},"y":{},"marker":{"color":"#325E68","size":8,"line":{"color":"#325E68","width":3}},"name":"Cambio en la deuda","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","mode":"lines+markers","line":{"color":"#325E68","width":4},"inherit":true}},"layout":{"width":700,"margin":{"b":140,"l":55,"t":30,"r":20},"title":"<b>Descomposición de variación de deuda SPNF<\/b> <br />(% PIB)","font":{"family":"Gill Sans MT","size":13},"hovermode":"compare","yaxis":{"domain":[0,1],"automargin":true,"title":"","range":[-7,20]},"xaxis":{"domain":[0,1],"automargin":true,"title":"","type":"category","categoryorder":"array","categoryarray":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"]},"barmode":"relative","showgrid":false,"zeroline":false,"automargin":true,"legend":{"orientation":"h","x":0.2,"y":-0.095},"annotations":[{"text":"Fuente: BCRD  y Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":-0.05,"yref":"paper","y":-0.53},{"text":"Fuente: BCRD  y Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":-0.05,"yref":"paper","y":-0.53},{"text":"Fuente: BCRD  y Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":-0.05,"yref":"paper","y":-0.53}],"showlegend":true},"source":"A","config":{"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[1.23,0.82,4.57,2.44,0.41,-2.35,0.49,0.8,-0.23,-0.41,5.17],"marker":{"color":"#519BA5","line":{"color":"rgba(31,119,180,1)"}},"name":"Resultado primario","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[0.41,-0.06,0.46,0.75,0.78,1.44,1.86,1.11,1.1,1.81,1.37],"marker":{"color":"#6ABED8","line":{"color":"rgba(255,127,14,1)"}},"name":"Tasa de interés real","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[-2.01,-0.79,-0.73,-1.46,-2.39,-2.28,-2.1,-1.53,-2.35,-1.79,2.86],"marker":{"color":"#FFBE86","line":{"color":"rgba(44,160,44,1)"}},"name":"Crecimiento real PIB","type":"bar","error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[0.65,0.63,0.82,1.36,0.93,0.67,0.6,0.82,0.99,1.42,3.08],"marker":{"color":"#83B386","line":{"color":"rgba(214,39,40,1)"}},"name":"Depreciación del tipo de cambio","type":"bar","error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[0.17,0.5,-1.31,1.86,-1.53,0.74,0.67,0.49,1.14,2.53,4.06],"marker":{"color":"#568C5A","line":{"color":"rgba(148,103,189,1)"}},"name":"Residual","type":"bar","error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[0.46,1.1,3.81,4.95,-1.8,-1.77,1.51,1.69,0.64,3.55,16.54],"marker":{"color":"#325E68","size":8,"line":{"color":"#325E68","width":3}},"name":"Cambio en la deuda","type":"scatter","mode":"lines+markers","line":{"color":"#325E68","width":4},"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="example1">
+<p>
+El financiamiento de 2020 se compuso, principalmente, por bonos globales en moneda extranjera, los cuales se incrementaron en US$7,896.4 con respecto a 2019, lo que supone un aumento de 32.7%.
+</p>
+</div>
+<p><br></p>
+<p><br></p>
+<div align="center">
+<div id="htmlwidget-9a884d2bbec476608ff2" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9a884d2bbec476608ff2">{"x":{"visdat":{"37b825f7a83":["function () ","plotlyVisDat"]},"cur_data":"37b825f7a83","attrs":{"37b825f7a83":{"x":{},"y":{},"orientation":"h","marker":{"color":"#3B5F5C","width":3},"name":"Externa-Acreedores privados","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"37b825f7a83.1":{"x":{},"y":{},"orientation":"h","marker":{"color":"#83B386","width":3},"name":"Externa-Multilateral","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"37b825f7a83.2":{"x":{},"y":{},"orientation":"h","marker":{"color":"#578F5B","width":3},"name":"Interna","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"37b825f7a83.3":{"x":{},"y":{},"orientation":"h","marker":{"color":"#FFBE86","width":3},"name":"Externa-Bilateral","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"37b825f7a83.4":{"x":{},"y":{},"orientation":"h","marker":{"color":"#519BA5","width":3},"name":"Nacional","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"37b825f7a83.5":{"x":{},"y":{},"orientation":"h","marker":{"color":"#2D5E71","width":3},"name":"Extranjera","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"width":700,"margin":{"b":70,"l":55,"t":50,"r":20},"title":"<b>Aumento de la deuda SPNF<\/b><br />(2020 vs 2019, US$ millones)<br />","barmode":"stack","font":{"family":"Gill Sans MT","size":13},"legend":{"x":90,"y":0.5},"xaxis":{"domain":[0,1],"automargin":true,"title":"","range":[0,9000],"dtick":1000},"yaxis":{"domain":[0,1],"automargin":true,"title":"","type":"category","categoryorder":"array","categoryarray":["Por acreedor","Por moneda"]},"annotations":[{"text":"Fuente: BCRD  y Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":-0.05,"yref":"paper","y":-0.15},{"text":"Fuente: BCRD  y Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":-0.05,"yref":"paper","y":-0.15},{"text":"Fuente: BCRD  y Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":-0.05,"yref":"paper","y":-0.15}],"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false,"displayModeBar":false},"data":[{"x":[5648.59],"y":["Por acreedor"],"orientation":"h","marker":{"color":"#3B5F5C","width":3,"line":{"color":"rgba(31,119,180,1)"}},"name":"Externa-Acreedores privados","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1543.96],"y":["Por acreedor"],"orientation":"h","marker":{"color":"#83B386","width":3,"line":{"color":"rgba(255,127,14,1)"}},"name":"Externa-Multilateral","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1257.22],"y":["Por acreedor"],"orientation":"h","marker":{"color":"#578F5B","width":3,"line":{"color":"rgba(44,160,44,1)"}},"name":"Interna","type":"bar","error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[126.84],"y":["Por acreedor"],"orientation":"h","marker":{"color":"#FFBE86","width":3,"line":{"color":"rgba(214,39,40,1)"}},"name":"Externa-Bilateral","type":"bar","error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[680.17],"y":["Por moneda"],"orientation":"h","marker":{"color":"#519BA5","width":3,"line":{"color":"rgba(148,103,189,1)"}},"name":"Nacional","type":"bar","error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[7896.42],"y":["Por moneda"],"orientation":"h","marker":{"color":"#2D5E71","width":3,"line":{"color":"rgba(140,86,75,1)"}},"name":"Extranjera","type":"bar","error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="example1">
+<p>
+Esta mayor contratación de deuda en los mercados internacionales aumentó la participación de la deuda externa en 3.9 puntos porcentuales, de manera que, a finales del 2020, esta representó el 69.0% del total de deuda.
+</p>
+</div>
+<p><br></p>
+<p><br></p>
+<div align="center">
+<div id="htmlwidget-854c10b7279ea80e75ce" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-854c10b7279ea80e75ce">{"x":{"visdat":{"37b81f704177":["function () ","plotlyVisDat"]},"cur_data":"37b81f704177","attrs":{"37b81f704177":{"x":{},"y":{},"marker":{"color":"#519BA5"},"name":"Deuda externa","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"37b81f704177.1":{"x":{},"y":{},"marker":{"color":"#95C7C1"},"name":"Deuda interna","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"width":700,"margin":{"b":98,"l":55,"t":45,"r":20},"title":"<b>Deuda SPNF por origen<\/b> <br />(% total)","font":{"family":"Gill Sans MT","size":13},"hovermode":"compare","xaxis":{"domain":[0,1],"automargin":true,"title":"","type":"category","categoryorder":"array","categoryarray":["2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"]},"barmode":"stack","yaxis":{"domain":[0,1],"automargin":true,"side":"left","title":"","showgrid":false,"zeroline":false},"legend":{"orientation":"h","x":0.32,"y":-0.058},"annotations":[{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.2},{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.2},{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.2}],"showlegend":true},"source":"A","config":{"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[64.34,61.98,67.13,70.06,66.13,65.33,69.03,67.26,65.65,63.71,67.06,65.06,68.96],"marker":{"color":"#519BA5","line":{"color":"rgba(31,119,180,1)"}},"name":"Deuda externa","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[35.66,38.02,32.87,29.94,33.87,34.67,30.97,32.74,34.35,36.29,32.94,34.94,31.04],"marker":{"color":"#95C7C1","line":{"color":"rgba(255,127,14,1)"}},"name":"Deuda interna","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="example1">
+<p>
+En cuanto a la composición de la deuda por tasas, el 86.8% de la deuda total se contrató a tasa fija. Estos altos niveles de deuda con tasa invariable, reducen el riesgo de aumento del servicio de la deuda ante una posible normalización de las tasas de interés internacionales una vez se consolide el proceso de recuperación global.
+</p>
+</div>
+<p><br></p>
+<p><br></p>
+<div align="center">
+<div id="htmlwidget-fd01c84e7b236982f60b" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fd01c84e7b236982f60b">{"x":{"visdat":{"37b863ef5b82":["function () ","plotlyVisDat"]},"cur_data":"37b863ef5b82","attrs":{"37b863ef5b82":{"x":{},"y":{},"marker":{"color":"#4F9BB9"},"name":"Tasa fija","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"37b863ef5b82.1":{"x":{},"y":{},"marker":{"color":"#A8CDDC"},"name":"Tasa variable","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"width":700,"margin":{"b":92,"l":55,"t":45,"r":20},"title":"<b>Composición de la deuda SPNF por tasas<\/b>  <br />(% total)","font":{"family":"Gill Sans MT","size":13},"hovermode":"compare","xaxis":{"domain":[0,1],"automargin":true,"title":"","type":"category","categoryorder":"array","categoryarray":["2013","2014","2015","2016","2017","2018","2019","2020"]},"barmode":"stack","yaxis":{"domain":[0,1],"automargin":true,"side":"left","title":"","showgrid":false,"zeroline":false},"legend":{"orientation":"h","x":0.32,"y":-0.05},"annotations":[{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.185},{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.185},{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.185}],"showlegend":true},"source":"A","config":{"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2013","2014","2015","2016","2017","2018","2019","2020"],"y":[73.96,79.66,79.69,80.67,85.89,87.1,86.57,86.75],"marker":{"color":"#4F9BB9","line":{"color":"rgba(31,119,180,1)"}},"name":"Tasa fija","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2013","2014","2015","2016","2017","2018","2019","2020"],"y":[25.48,19.83,20.17,18.69,13.96,12.82,13.36,13.2],"marker":{"color":"#A8CDDC","line":{"color":"rgba(255,127,14,1)"}},"name":"Tasa variable","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="example1">
+<p>
+Asimismo, se observa un aumento de la participación de la deuda en moneda extranjera como porcentaje del total. A finales del 2020, la deuda en moneda extranjera ascendió a 72.0%, nivel no observado desde los años previos a la recompra de la deuda de Petrocaribe.
+</p>
+</div>
+<p><br></p>
+<p><br></p>
+<div align="center">
+<div id="htmlwidget-b3df16c8e1302a3152b1" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b3df16c8e1302a3152b1">{"x":{"visdat":{"37b8199258df":["function () ","plotlyVisDat"]},"cur_data":"37b8199258df","attrs":{"37b8199258df":{"labels":{},"values":{},"marker":{"colors":["#407241","#7EB47A"]},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"pie","hole":0.6,"inherit":true}},"layout":{"width":500,"margin":{"b":0,"l":55,"t":30,"r":20},"title":"<b>Deuda pública SPNF por moneda<\/b> <br />(2020, % del total)","yaxis":{"title":""},"font":{"family":"Gill Sans MT","size":13.5},"legend":{"x":100,"y":0.5},"annotations":[{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":0.02},{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":0.02},{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":0.02}],"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false,"displayModeBar":false},"data":[{"labels":["Moneda nacional","Moneda extranjera"],"values":[28.03,71.97],"marker":{"color":"rgba(31,119,180,1)","colors":["#407241","#7EB47A"],"line":{"color":"rgba(255,255,255,1)"}},"type":"pie","hole":0.6,"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="example1">
+<p>
+A pesar del desembolso de préstamos de emergencia otorgados por organismos internacionales para hacer frente a la crisis sanitaria, la proporción de deuda externa multilateral ha continuado en descenso en el último quinquenio y en 2020 representó el 21.4% de la deuda externa.
+</p>
+</div>
+<p><br></p>
+<p><br></p>
+<div align="center">
+<div id="htmlwidget-2dce1f8faddfb318bcb1" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2dce1f8faddfb318bcb1">{"x":{"visdat":{"37b86ef86c9e":["function () ","plotlyVisDat"]},"cur_data":"37b86ef86c9e","attrs":{"37b86ef86c9e":{"fill":"toself","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatterpolar"},"37b86ef86c9e.1":{"fill":"toself","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatterpolar","r":[41.16,30.07,28.77],"theta":["<b>Bilateral<\/b>","<b>Multilateral<\/b>","<b>Acreedores privados<\/b>"],"name":"2013","marker":{"color":"white","size":10,"line":{"width":2}},"hovertemplate":"%{theta}<br>%{r}<extra><\/extra>","inherit":true},"37b86ef86c9e.2":{"fill":"toself","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatterpolar","r":[6.34,21.44,72.22],"theta":["<b>Bilateral<\/b>","<b>Multilateral<\/b>","<b>Acreedores privados<\/b>"],"name":"2020","marker":{"color":"white","size":10,"line":{"width":2}},"hovertemplate":"%{theta}<br>%{r}<extra><\/extra>","inherit":true}},"layout":{"width":500,"margin":{"b":35,"l":55,"t":75,"r":20},"title":"<b>Deuda pública externa por acreedor<\/b> <br />(% del total)","font":{"family":"Gill Sans MT","size":13},"legend":{"x":100,"y":0.75},"annotations":[{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"hovermode":"compare","xref":"paper","x":-0.1,"yref":"paper","y":-0.11},{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"hovermode":"compare","xref":"paper","x":-0.1,"yref":"paper","y":-0.11},{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"hovermode":"compare","xref":"paper","x":-0.1,"yref":"paper","y":-0.11}],"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false,"displayModeBar":false},"data":[{"fillcolor":"rgba(31,119,180,0.5)","fill":"toself","type":"scatterpolar","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"frame":null},{"fillcolor":"rgba(255,127,14,0.5)","fill":"toself","type":"scatterpolar","r":[41.16,30.07,28.77],"theta":["<b>Bilateral<\/b>","<b>Multilateral<\/b>","<b>Acreedores privados<\/b>"],"name":"2013","marker":{"color":"white","size":10,"line":{"color":"rgba(255,127,14,1)","width":2}},"hovertemplate":["%{theta}<br>%{r}<extra><\/extra>","%{theta}<br>%{r}<extra><\/extra>","%{theta}<br>%{r}<extra><\/extra>"],"mode":"markers","line":{"color":"rgba(255,127,14,1)"},"frame":null},{"fillcolor":"rgba(44,160,44,0.5)","fill":"toself","type":"scatterpolar","r":[6.34,21.44,72.22],"theta":["<b>Bilateral<\/b>","<b>Multilateral<\/b>","<b>Acreedores privados<\/b>"],"name":"2020","marker":{"color":"white","size":10,"line":{"color":"rgba(44,160,44,1)","width":2}},"hovertemplate":["%{theta}<br>%{r}<extra><\/extra>","%{theta}<br>%{r}<extra><\/extra>","%{theta}<br>%{r}<extra><\/extra>"],"mode":"markers","line":{"color":"rgba(44,160,44,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="example1">
+<p>
+La preferencia por utilizar bonos soberanos, también es evidente en el mercado interno. Dadas las nuevas emisiones en 2020, los bonos internos representan el 71.4% del total de deuda interna del SPNF. Es importante resaltar que el 100% del aumento de la deuda interna observado en el 2020 se explica por emisiones de bonos domésticos.
+</p>
+</div>
+<p><br></p>
+<p><br></p>
+<div align="center">
+<div id="htmlwidget-792ba8c58562e4e71558" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-792ba8c58562e4e71558">{"x":{"visdat":{"37b884b72f6":["function () ","plotlyVisDat"]},"cur_data":"37b884b72f6","attrs":{"37b884b72f6":{"x":{},"y":{},"marker":{"color":"#2D5E71"},"name":"Bonos de subastas","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"37b884b72f6.1":{"x":{},"y":{},"marker":{"color":"#519BA5"},"name":"Bonos de recapitalización BCRD","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"37b884b72f6.2":{"x":{},"y":{},"marker":{"color":"#A3D5C0"},"name":"Banca comercial u otras instituciones financieras","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"37b884b72f6.3":{"x":{},"y":{},"marker":{"color":"#83B386"},"name":"Bonos de CDEEE","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"37b884b72f6.4":{"x":{},"y":{},"marker":{"color":"#568C5A"},"name":"Bonos de deuda administrativa","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"37b884b72f6.5":{"x":{},"y":{},"marker":{"color":"#40685B"},"name":"Bonos del tesoro (Ley 121-05)","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"37b884b72f6.6":{"x":{},"y":{},"marker":{"color":"#FFBE86"},"name":"Título canjeado","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"width":700,"margin":{"b":50,"l":55,"t":45,"r":20},"title":"<b>Deuda pública interna por acreedor<\/b> <br />(% del total)","yaxis":{"domain":[0,1],"automargin":true,"title":""},"xaxis":{"domain":[0,1],"automargin":true,"title":"","type":"category","categoryorder":"array","categoryarray":["2013","2016","2020"]},"barmode":"stack","font":{"family":"Gill Sans MT","size":13},"legend":{"x":100,"y":0.5},"annotations":[{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"hovermode":"compare","xref":"paper","x":0.0001,"yref":"paper","y":-0.15},{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"hovermode":"compare","xref":"paper","x":0.0001,"yref":"paper","y":-0.15},{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"hovermode":"compare","xref":"paper","x":0.0001,"yref":"paper","y":-0.15}],"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2013","2016","2020"],"y":[27.62,55.26,71.39],"marker":{"color":"#2D5E71","line":{"color":"rgba(31,119,180,1)"}},"name":"Bonos de subastas","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2013","2016","2020"],"y":[38.56,30.9,16.49],"marker":{"color":"#519BA5","line":{"color":"rgba(255,127,14,1)"}},"name":"Bonos de recapitalización BCRD","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2013","2016","2020"],"y":[23.28,8.24,4.97],"marker":{"color":"#A3D5C0","line":{"color":"rgba(44,160,44,1)"}},"name":"Banca comercial u otras instituciones financieras","type":"bar","error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2013","2016","2020"],"y":[6.22,5.44,3.62],"marker":{"color":"#83B386","line":{"color":"rgba(214,39,40,1)"}},"name":"Bonos de CDEEE","type":"bar","error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2013","2016","2020"],"y":[3.1,0.17,0],"marker":{"color":"#568C5A","line":{"color":"rgba(148,103,189,1)"}},"name":"Bonos de deuda administrativa","type":"bar","error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2013","2016","2020"],"y":[1.11,0,0],"marker":{"color":"#40685B","line":{"color":"rgba(140,86,75,1)"}},"name":"Bonos del tesoro (Ley 121-05)","type":"bar","error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2013","2016","2020"],"y":[0,0,3.54],"marker":{"color":"#FFBE86","line":{"color":"rgba(227,119,194,1)"}},"name":"Título canjeado","type":"bar","error_y":{"color":"rgba(227,119,194,1)"},"error_x":{"color":"rgba(227,119,194,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="costo-y-perspectivas" class="section level1">
+<h1><b>Costo y perspectivas</b></h1>
+<br> <br> <f size="6"><s style="color:white">/</f></s>
+<p align="center">
+<font size="6.0"><span style="color: #2D5E71;"><strong>Panorama general de la deuda del SPNF</strong></span></font>
+</p>
+</wk>
+<p align="center">
+<font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Departamento de Programación Monetaria y Estudios Económicos</span></font>
+</p>
+</wk>
+<p align="center">
+<font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Subdirección de Asuntos Fiscales</span></font>
+</p>
+</wk>
+<p align="center">
+<font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Abril 2021</span></font>
+</p>
+<p></wk> <br> <br></p>
+<div id="example1">
+<p align="justify">
+<font size="4.0"><span style="color: black;"> En consonancia con el aumento observado de la deuda del SPNF, el gasto en intereses ha alcanzado un máximo histórico de 26.2% de los impuestos en 2020, y a partir de 2019 excede el total de las erogaciones de las partidas que componen el antiguo gasto de capital.
+</p>
+</div>
+<p><br></p>
+<p><br></p>
+<div align="center">
+<div id="htmlwidget-ff77a9382720272083f6" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ff77a9382720272083f6">{"x":{"visdat":{"37b83d7d21dc":["function () ","plotlyVisDat"]},"cur_data":"37b83d7d21dc","attrs":{"37b83d7d21dc":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"% Impuestos","line":{"color":"#325E68","width":3},"marker":{"color":"#325E68","size":8,"line":{"color":"#325E68","width":3}},"inherit":true},"37b83d7d21dc.1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"% Antiguo gasto capital","yaxis":"y2","line":{"color":"#7EB4C0","width":3},"marker":{"color":"#7EB4C0","size":8,"line":{"color":"#7EB4C0","width":3}},"inherit":true}},"layout":{"width":680,"margin":{"b":105,"l":55,"t":50,"r":20},"title":"<b>Intereses de la deuda SPNF<\/b> <br />(% impuestos y antiguo gasto capital)","font":{"family":"Gill Sans MT","size":11},"hovermode":"compare","xaxis":{"domain":[0,1],"automargin":true,"title":"","tickangle":270,"type":"category","categoryorder":"array","categoryarray":["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"]},"yaxis":{"domain":[0,1],"automargin":false,"side":"left","title":"Impuestos","showgrid":false,"zeroline":false,"range":[5,30]},"yaxis2":{"side":"right","overlaying":"y","title":"Antiguo gasto capital","showgrid":false,"zeroline":false,"automargin":true,"range":[20,120]},"legend":{"orientation":"h","x":0.32,"y":-0.14},"annotations":[{"text":"Fuente: Crédito Público, SIGEF, Dept. Internacional BCRD","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.37},{"text":"Fuente: Crédito Público, SIGEF, Dept. Internacional BCRD","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.37},{"text":"Fuente: Crédito Público, SIGEF, Dept. Internacional BCRD","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.37}],"showlegend":true},"source":"A","config":{"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[6.27,5.88,8.43,13.88,14.31,9.21,9.29,7.59,10.78,14.71,15.21,16.68,14.49,16.62,17.7,18.09,19.69,19.63,19.94,20.69,26.22],"type":"scatter","mode":"lines+markers","name":"% Impuestos","line":{"color":"#325E68","width":3},"marker":{"color":"#325E68","size":8,"line":{"color":"#325E68","width":3}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[23.26,15.85,21.44,27.75,44.81,31.37,34.62,25.47,30.44,51.13,47.63,58.7,28.93,52.12,79.94,70.71,83.67,74.75,97.51,117.9,110.01],"type":"scatter","mode":"lines+markers","name":"% Antiguo gasto capital","yaxis":"y2","line":{"color":"#7EB4C0","width":3},"marker":{"color":"#7EB4C0","size":8,"line":{"color":"#7EB4C0","width":3}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="example1">
+<p>
+A pesar del aumento de los intereses de la deuda externa, debido al constante incremento del influjo de divisas de la economía, el ratio del servicio de la deuda externa como porcentaje de dólares generados por la economía ha permanecido relativamente invariable desde el 2013.
+</p>
+</div>
+<p><br></p>
+<p><br></p>
+<div align="center">
+<div id="htmlwidget-aca92ced1eaa41d26366" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-aca92ced1eaa41d26366">{"x":{"visdat":{"37b8dd127d4":["function () ","plotlyVisDat"]},"cur_data":"37b8dd127d4","attrs":{"37b8dd127d4":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"bar","marker":{"color":"#5BB5A6"},"inherit":true}},"layout":{"width":710,"margin":{"b":150,"l":55,"t":30,"r":20},"title":"<b>Servicio deuda externa<\/b> <br />(% dólares generados* por la economía)","font":{"family":"Gill Sans MT","size":13},"hovermode":"compare","xaxis":{"domain":[0,1],"automargin":true,"title":"","tickangle":270,"type":"category","categoryorder":"array","categoryarray":["2012-T1","2012-T2","2012-T3","2012-T4","2013-T1","2013-T2","2013-T3","2013-T4","2014-T1","2014-T2","2014-T3","2014-T4","2015-T1","2015-T2","2015-T3","2015-T4","2016-T1","2016-T2","2016-T3","2016-T4","2017-T1","2017-T2","2017-T3","2017-T4","2018-T1","2018-T2","2018-T3","2018-T4","2019-T1","2019-T2","2019-T3","2019-T4","2020-T1","2020-T2","2020-T3","2020-T4"]},"yaxis":{"domain":[0,1],"automargin":true,"side":"left","title":"","showgrid":false,"zeroline":false,"range":[0,45]},"legend":{"orientation":"h","x":0.32,"y":-0.05},"annotations":[{"text":"*Incluye influjo de divisas por exportaciones nacionales y zonas francas, ingresos por turísmo, inversión extranjera directa y remesas.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":9e-006,"yref":"paper","y":-0.33},{"text":"*Incluye influjo de divisas por exportaciones nacionales y zonas francas, ingresos por turísmo, inversión extranjera directa y remesas.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":9e-006,"yref":"paper","y":-0.33},{"text":"*Incluye influjo de divisas por exportaciones nacionales y zonas francas, ingresos por turísmo, inversión extranjera directa y remesas.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":9e-006,"yref":"paper","y":-0.33},{"text":"Fuente: BCRD  y Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0,"yref":"paper","y":-0.4},{"text":"Fuente: BCRD  y Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0,"yref":"paper","y":-0.4},{"text":"Fuente: BCRD  y Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0,"yref":"paper","y":-0.4}],"showlegend":false},"source":"A","config":{"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2012-T1","2012-T2","2012-T3","2012-T4","2013-T1","2013-T2","2013-T3","2013-T4","2014-T1","2014-T2","2014-T3","2014-T4","2015-T1","2015-T2","2015-T3","2015-T4","2016-T1","2016-T2","2016-T3","2016-T4","2017-T1","2017-T2","2017-T3","2017-T4","2018-T1","2018-T2","2018-T3","2018-T4","2019-T1","2019-T2","2019-T3","2019-T4","2020-T1","2020-T2","2020-T3","2020-T4"],"y":[5.1,8.43,5.56,8.33,6.72,8.54,11.68,9.92,12.91,10.06,12.51,11.38,7.35,10.14,10.45,10.15,10.48,8.91,9.62,8.68,9.72,8.31,10.84,8.39,10.4,7.88,10.02,9.08,9.91,16.91,9.96,9.27,9.88,41.19,14.21,39.08],"type":"bar","marker":{"color":"#5BB5A6","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="example1">
+<p>
+Por su parte, la deuda del SPNF per cápita aumentó 23.9% en 2020 (US$820.8), alcanzando US$4,260.8 por persona.
+</p>
+</div>
+<p><br></p>
+<p><br></p>
+<div align="center">
+<div id="htmlwidget-4e3eae2e28eeb0a22949" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4e3eae2e28eeb0a22949">{"x":{"visdat":{"37b86c9e2d08":["function () ","plotlyVisDat"]},"cur_data":"37b86c9e2d08","attrs":{"37b86c9e2d08":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"bar","name":"Deuda Pública (per cápita) US$","marker":{"color":"#2D5E71"},"inherit":true}},"layout":{"width":700,"margin":{"b":120,"l":55,"t":30,"r":20},"title":"<b>Deuda SPNF per cápita<\/b> <br />(US$)","font":{"family":"Gill Sans MT","size":13},"hovermode":"compare","xaxis":{"domain":[0,1],"automargin":true,"title":"","tickangle":270,"type":"category","categoryorder":"array","categoryarray":["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"]},"yaxis":{"domain":[0,1],"automargin":true,"side":"left","title":"","showgrid":false,"zeroline":false,"range":[0,4500]},"legend":{"orientation":"h","x":0.32,"y":-0.05},"annotations":[{"text":"Fuente: BCRD, Crédito Público y ONE.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.265},{"text":"Fuente: BCRD, Crédito Público y ONE.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.265},{"text":"Fuente: BCRD, Crédito Público y ONE.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.265}],"showlegend":false},"source":"A","config":{"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[386.24,464.88,510.32,656.85,743.42,760.69,816.49,823.88,1209.02,1412.98,1563.32,1732.03,2010.47,2371.44,2408.97,2420.15,2655.86,2905.21,3132.45,3439.97,4260.81],"type":"bar","name":"Deuda Pública (per cápita) US$","marker":{"color":"#2D5E71","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="example1">
+<p>
+Al agregar la deuda del Banco Central, la deuda pública consolidada ascendió en 2020 a 69.1% del PIB. Del aumento observado durante el 2020, el 14.0% se explicó por el aumento de la deuda del Banco Central como porcentaje del PIB.
+</p>
+</div>
+<p><br></p>
+<p><br></p>
+<div align="center">
+<div id="htmlwidget-50b5dd9b669a88d84d1e" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-50b5dd9b669a88d84d1e">{"x":{"visdat":{"37b84b506a97":["function () ","plotlyVisDat"]},"cur_data":"37b84b506a97","attrs":{"37b84b506a97":{"x":{},"y":{},"marker":{"color":"#548E7B"},"name":"SPNF","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"37b84b506a97.1":{"x":{},"y":{},"marker":{"color":"#9BC7A7"},"name":"BCRD","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"width":700,"margin":{"b":120,"l":55,"t":30,"r":20},"title":"<b>Deuda pública consolidada<\/b> <br />(% PIB)","font":{"family":"Gill Sans MT","size":13},"hovermode":"compare","xaxis":{"domain":[0,1],"automargin":true,"title":"","tickangle":270,"type":"category","categoryorder":"array","categoryarray":["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"]},"barmode":"stack","yaxis":{"domain":[0,1],"automargin":true,"side":"left","title":"","showgrid":false,"zeroline":false},"legend":{"orientation":"h","x":0.32,"y":-0.15},"annotations":[{"text":"Fuente: BCRD.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.33},{"text":"Fuente: BCRD.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.33},{"text":"Fuente: BCRD.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.33}],"showlegend":true},"source":"A","config":{"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[13.45,15.67,17.08,27.56,28.4,19,19.46,17.14,23.27,27.43,27.5,28.57,32.04,36.99,35.4,33.9,35.32,36.92,37.6,40.43,56.48],"marker":{"color":"#548E7B","line":{"color":"rgba(31,119,180,1)"}},"name":"SPNF","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[4.75,4.09,4.86,11.98,18.5,13.49,14.84,14.01,8.76,8.93,9.07,9.28,9.22,8.07,8.21,9.11,9.69,9.59,10.31,10.11,12.62],"marker":{"color":"#9BC7A7","line":{"color":"rgba(255,127,14,1)"}},"name":"BCRD","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="example1">
+<p>
+Las proyecciones del Economist Intelligence Unit sugieren que la deuda pública consolidada seguirá aumentando hasta alcanzar su máximo de 71.2% del PIB en 2022, año a partir del cual empezará a reducirse hasta situarse en 67.1% del PIB en 2025.
+</p>
+</div>
+<p><br></p>
+<p><br></p>
+<div align="center">
+<div id="htmlwidget-c6d6117c1446ca29d446" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c6d6117c1446ca29d446">{"x":{"visdat":{"37b84af4c2f":["function () ","plotlyVisDat"]},"cur_data":"37b84af4c2f","attrs":{"37b84af4c2f":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#2D5E71","width":4},"marker":{"color":"#2D5E71","size":8,"line":{"color":"#2D5E71","width":3}},"name":"Deuda Pública Consolidada","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"37b84af4c2f.1":{"x":{},"y":{},"mode":"lines+markers","line":{"color":"#4C98AA","width":4,"dash":"dot"},"marker":{"color":"#4C98AA","size":8,"line":{"color":"#4C98AA","width":3}},"name":"Proyección Economist Intelligence Unit ","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","inherit":true}},"layout":{"width":700,"margin":{"b":120,"l":55,"t":30,"r":20},"title":"<b>Deuda pública consolidada<\/b> <br />(% PIB)","font":{"family":"Gill Sans MT","size":13},"hovermode":"compare","xaxis":{"domain":[0,1],"automargin":true,"title":"","type":"category","categoryorder":"array","categoryarray":["2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024","2025"]},"barmode":"stack","yaxis":{"domain":[0,1],"automargin":true,"side":"left","title":"","showgrid":false,"zeroline":true,"range":[28,75]},"legend":{"orientation":"h","x":0.12,"y":-0.07},"annotations":[{"text":"Fuente: BCRD y Proyecciones realizadas por Gladys Jiménez.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.27},{"text":"Fuente: BCRD y Proyecciones realizadas por Gladys Jiménez.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.27},{"text":"Fuente: BCRD y Proyecciones realizadas por Gladys Jiménez.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.27}],"showlegend":true},"source":"A","config":{"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[32.03,36.37,36.57,37.85,41.27,45.07,43.61,43.01,45.01,46.5,47.9,50.53,69.1],"mode":"lines+markers","line":{"color":"#2D5E71","width":4},"marker":{"color":"#2D5E71","size":8,"line":{"color":"#2D5E71","width":3}},"name":"Deuda Pública Consolidada","type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2019","2020","2021","2022","2023","2024","2025"],"y":[50.53,68.4,69.1,71.2,69.8,68.5,67.1],"mode":"lines+markers","line":{"color":"#4C98AA","width":4,"dash":"dot"},"marker":{"color":"#4C98AA","size":8,"line":{"color":"#4C98AA","width":3}},"name":"Proyección Economist Intelligence Unit ","type":"scatter","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="example1">
+<p>
+Al incluir la reciente emisión de bonos soberanos en enero 2021 y la transacción de manejo de pasivos realizada en diciembre de 2020, los mayores vencimientos de bonos externos empezarían a partir del 2025. En el horizonte de vencimiento de bonos, resalta el período 2033-2040, debido a que no se contemplan vencimientos de bonos existentes, lo que genera oportunidades para nuevas colocaciones.
+</p>
+</div>
+<p><br></p>
+<p><br></p>
+<div align="center">
+<div id="htmlwidget-c43170f3d0017cada477" style="width:100%;height:400px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c43170f3d0017cada477">{"x":{"visdat":{"37b8d644fde":["function () ","plotlyVisDat"]},"cur_data":"37b8d644fde","attrs":{"37b8d644fde":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"bar","name":"Perfil Vencimiento Bonos Soberanos (Millones US$)","marker":{"color":"#2D5E71"},"inherit":true}},"layout":{"width":700,"margin":{"b":120,"l":55,"t":30,"r":20},"title":"<b>Perfil vencimiento bonos soberanos<\/b> <br />(US$ millones)","font":{"family":"Gill Sans MT","size":13},"hovermode":"compare","xaxis":{"domain":[0,1],"automargin":true,"title":"","tickangle":270,"type":"category","categoryorder":"array","categoryarray":["2021","2022","2023","2024","2025","2026","2027","2028","2029","2030","2031","2032","2033-2040","2041","2042-2043","2044","2045","2046-2047","2048","2049","2050-2059","2060"]},"yaxis":{"domain":[0,1],"automargin":true,"side":"left","title":"","showgrid":false,"zeroline":false,"range":[0,3500]},"legend":{"orientation":"h","x":0.32,"y":-0.05},"shapes":[{"type":"rect","fillcolor":"grey","line":{"color":"grey"},"opacity":0.099,"x0":"7.55","x1":"8.4","xref":"x","y0":4,"y1":3066,"yref":"y"},{"type":"rect","fillcolor":"grey","line":{"color":"grey"},"opacity":0.099,"x0":"9.62","x1":"10.41","xref":"Años","y0":4,"y1":3066,"yref":"y"},{"type":"rect","fillcolor":"grey","line":{"color":"grey"},"opacity":0.099,"x0":"11.64","x1":"12.43","xref":"x","y0":4,"y1":3066,"yref":"y"},{"type":"rect","fillcolor":"grey","line":{"color":"grey"},"opacity":0.099,"x0":"16.64","x1":"17.43","xref":"x","y0":4,"y1":3066,"yref":"y"},{"type":"rect","fillcolor":"grey","line":{"color":"grey"},"opacity":0.099,"x0":"13.6","x1":"14.43","xref":"x","y0":4,"y1":3066,"yref":"y"},{"type":"rect","fillcolor":"grey","line":{"color":"grey"},"opacity":0.099,"x0":"19.59","x1":"20.4","xref":"x","y0":4,"y1":3066,"yref":"y"}],"annotations":[{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.3},{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.3},{"text":"Fuente: Crédito Público.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":-0.3}],"showlegend":false},"source":"A","config":{"showSendToCloud":false,"displayModeBar":false},"data":[{"x":["2021","2022","2023","2024","2025","2026","2027","2028","2029","2030","2031","2032","2033-2040","2041","2042-2043","2044","2045","2046-2047","2048","2049","2050-2059","2060"],"y":[77.43,203.83,892.14,482.79,1372.2,2770.53,1800,1300,0,2000,0,3066,0,1500,0,1500,2000,0,1000,1500,0,3200],"type":"bar","name":"Perfil Vencimiento Bonos Soberanos (Millones US$)","marker":{"color":"#2D5E71","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="panorama-internacional" class="section level1">
+<h1><b>Panorama Internacional</b></h1>
+<br> <br> <f size="6"><s style="color:white">/</f></s>
+<p align="center">
+<font size="6.0"><span style="color: #2D5E71;"><strong>Panorama general de la deuda del SPNF</strong></span></font>
+</p>
+</wk>
+<p align="center">
+<font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Departamento de Programación Monetaria y Estudios Económicos</span></font>
+</p>
+</wk>
+<p align="center">
+<font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Subdirección de Asuntos Fiscales</span></font>
+</p>
+</wk>
+<p align="center">
+<font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Abril 2021</span></font>
+</p>
+<p></wk> <br> <br></p>
+<div id="example1">
+<p>
+En 2020, la deuda del gobierno central de República Dominicana se situó por encima de la media de Latinoamérica, siendo el cuarto país de la región con el mayor aumento como porcentaje del PIB en comparación con 2019.
+</p>
+</div>
+<p><br></p>
+<p><br></p>
+<div id="htmlwidget-6c0ee8e9d618ea08aed1" style="width:576px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6c0ee8e9d618ea08aed1">{"x":{"visdat":{"37b8db81825":["function () ","plotlyVisDat"]},"cur_data":"37b8db81825","attrs":{"37b8db81825":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"z":{},"color":{},"colors":"Blues","text":{},"locations":{},"marker":{"line":{"color":"rgba(128,128,128,1)","width":0.8}},"hovertemplate":["Suriname<br><b>2020: <\/b>145.27<br><b>2019: <\/b>82.3<br><b>Cambio: <\/b>62.97<extra><\/extra>","Belize<br><b>2020: <\/b>134.61<br><b>2019: <\/b>105.08<br><b>Cambio: <\/b>29.53<extra><\/extra>","Barbados<br><b>2020: <\/b>134.09<br><b>2019: <\/b>122.22<br><b>Cambio: <\/b>11.87<extra><\/extra>","Aruba<br><b>2020: <\/b>127.14<br><b>2019: <\/b>81.29<br><b>Cambio: <\/b>45.86<extra><\/extra>","Antigua and Barbuda<br><b>2020: <\/b>113.69<br><b>2019: <\/b>84.47<br><b>Cambio: <\/b>29.22<extra><\/extra>","Brazil<br><b>2020: <\/b>101.40<br><b>2019: <\/b>89.47<br><b>Cambio: <\/b>11.93<extra><\/extra>","Jamaica<br><b>2020: <\/b>101.33<br><b>2019: <\/b>93.86<br><b>Cambio: <\/b>7.47<extra><\/extra>","Argentina<br><b>2020: <\/b> 96.69<br><b>2019: <\/b>90.38<br><b>Cambio: <\/b>6.31<extra><\/extra>","Dominica<br><b>2020: <\/b> 90.76<br><b>2019: <\/b>85.72<br><b>Cambio: <\/b>5.04<extra><\/extra>","El Salvador<br><b>2020: <\/b> 88.99<br><b>2019: <\/b>69.4<br><b>Cambio: <\/b>19.58<extra><\/extra>","St. Vincent and the Grenadines<br><b>2020: <\/b> 87.93<br><b>2019: <\/b>75.2<br><b>Cambio: <\/b>12.73<extra><\/extra>","St. Lucia<br><b>2020: <\/b> 85.10<br><b>2019: <\/b>61.32<br><b>Cambio: <\/b>23.78<extra><\/extra>","Grenada<br><b>2020: <\/b> 71.50<br><b>2019: <\/b>59.08<br><b>Cambio: <\/b>12.42<extra><\/extra>","Costa Rica<br><b>2020: <\/b> 70.05<br><b>2019: <\/b>58.38<br><b>Cambio: <\/b>11.67<extra><\/extra>","Uruguay<br><b>2020: <\/b> 69.50<br><b>2019: <\/b>65.91<br><b>Cambio: <\/b>3.58<extra><\/extra>","Bolivia<br><b>2020: <\/b> 69.45<br><b>2019: <\/b>59<br><b>Cambio: <\/b>10.45<extra><\/extra>","St. Kitts and Nevis<br><b>2020: <\/b> 69.07<br><b>2019: <\/b>56.22<br><b>Cambio: <\/b>12.85<extra><\/extra>","Ecuador<br><b>2020: <\/b> 68.92<br><b>2019: <\/b>51.83<br><b>Cambio: <\/b>17.1<extra><\/extra>","República Dominicana<br><b>2020: <\/b> 68.77<br><b>2019: <\/b>53.76<br><b>Cambio: <\/b>15.01<extra><\/extra>","Bahamas<br><b>2020: <\/b> 68.71<br><b>2019: <\/b>58.84<br><b>Cambio: <\/b>9.87<extra><\/extra>","Colombia<br><b>2020: <\/b> 68.23<br><b>2019: <\/b>52.28<br><b>Cambio: <\/b>15.95<extra><\/extra>","México<br><b>2020: <\/b> 65.54<br><b>2019: <\/b>53.75<br><b>Cambio: <\/b>11.79<extra><\/extra>","Trinidad and Tobago<br><b>2020: <\/b> 57.46<br><b>2019: <\/b>45.12<br><b>Cambio: <\/b>12.34<extra><\/extra>","Panamá<br><b>2020: <\/b> 54.95<br><b>2019: <\/b>41.04<br><b>Cambio: <\/b>13.91<extra><\/extra>","Haití<br><b>2020: <\/b> 54.36<br><b>2019: <\/b>47.69<br><b>Cambio: <\/b>6.68<extra><\/extra>","Nicaragua<br><b>2020: <\/b> 48.26<br><b>2019: <\/b>42.14<br><b>Cambio: <\/b>6.12<extra><\/extra>","Honduras<br><b>2020: <\/b> 45.96<br><b>2019: <\/b>40.29<br><b>Cambio: <\/b>5.67<extra><\/extra>","Perú<br><b>2020: <\/b> 39.48<br><b>2019: <\/b>27.12<br><b>Cambio: <\/b>12.36<extra><\/extra>","Guyana<br><b>2020: <\/b> 36.98<br><b>2019: <\/b>39.79<br><b>Cambio: <\/b>-2.81<extra><\/extra>","Paraguay<br><b>2020: <\/b> 35.45<br><b>2019: <\/b>26.11<br><b>Cambio: <\/b>9.35<extra><\/extra>","Chile<br><b>2020: <\/b> 32.81<br><b>2019: <\/b>27.91<br><b>Cambio: <\/b>4.9<extra><\/extra>","Guatemala<br><b>2020: <\/b> 32.23<br><b>2019: <\/b>26.59<br><b>Cambio: <\/b>5.64<extra><\/extra>","No disponible<br><b>2020: <\/b>  0.00<br><b>2019: <\/b>0<br><b>Cambio: <\/b>0<extra><\/extra>"],"showscale":false,"inherit":true}},"layout":{"margin":{"b":25,"l":0,"t":30,"r":30},"mapType":"geo","scene":{"zaxis":{"title":"`Deuda Gob. General (% PIB) 2020`"}},"geo":{"domain":{"x":[0,1],"y":[0,1]},"showframe":false,"showcoastlines":false,"projection":{"type":"Mercator"},"fitbounds":"locations","showland":true,"landcolor":"white","showcountries":false,"showbackground":false,"lonaxis":{"range":[-200,10]}},"hovermode":"closest","showlegend":false,"title":"<b>Deuda del Gobierno general, América Latina 2020<\/b><br />(% PIB)","font":{"family":"Gill Sans MT","size":13},"width":750,"heigth":5000,"autosize":true,"plot_bgcolor":"rgba(0,0,0,0)","layout.grid":10,"type":"heatmap","align":"center","annotations":[{"text":"Fuente: Fondo Monetario Internacional.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":0},{"text":"Fuente: Fondo Monetario Internacional.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":0},{"text":"Fuente: Fondo Monetario Internacional.","font":{"family":"Gill Sans MT","size":12,"color":"grey"},"showarrow":false,"xref":"paper","x":0.0001,"yref":"paper","y":0},{"text":"<b>Promedio AL<\/b><br /><b>2020:<\/b> 62.16% PIB<br /><b>2019:<\/b> 51.49% PIB","font":{"family":"Gill Sans MT","size":14,"color":"#3F94C9"},"showarrow":false,"xref":"paper","x":0.96,"yref":"paper","y":0.5},{"text":"<b>Promedio AL<\/b><br /><b>2020:<\/b> 62.16% PIB<br /><b>2019:<\/b> 51.49% PIB","font":{"family":"Gill Sans MT","size":14,"color":"#3F94C9"},"showarrow":false,"xref":"paper","x":0.96,"yref":"paper","y":0.5},{"text":"<b>Promedio AL<\/b><br /><b>2020:<\/b> 62.16% PIB<br /><b>2019:<\/b> 51.49% PIB","font":{"family":"Gill Sans MT","size":14,"color":"#3F94C9"},"showarrow":false,"xref":"paper","x":0.96,"yref":"paper","y":0.5}]},"source":"A","config":{"showSendToCloud":false,"displayModeBar":false},"data":[{"colorbar":{"title":"Porcentaje del PIB","ticklen":2,"tickprefix":"%"},"colorscale":[["0","rgba(247,251,255,1)"],["0.0416666666666667","rgba(239,246,252,1)"],["0.0833333333333333","rgba(230,240,250,1)"],["0.125","rgba(222,235,247,1)"],["0.166666666666667","rgba(214,230,244,1)"],["0.208333333333333","rgba(206,224,242,1)"],["0.25","rgba(198,219,239,1)"],["0.291666666666667","rgba(185,213,234,1)"],["0.333333333333333","rgba(172,208,230,1)"],["0.375","rgba(158,202,225,1)"],["0.416666666666667","rgba(142,193,221,1)"],["0.458333333333333","rgba(125,183,218,1)"],["0.5","rgba(107,174,214,1)"],["0.541666666666667","rgba(94,165,209,1)"],["0.583333333333333","rgba(81,155,203,1)"],["0.625","rgba(66,146,198,1)"],["0.666666666666667","rgba(57,135,192,1)"],["0.708333333333333","rgba(46,124,187,1)"],["0.75","rgba(33,113,181,1)"],["0.791666666666667","rgba(27,102,173,1)"],["0.833333333333333","rgba(19,91,164,1)"],["0.875","rgba(8,81,156,1)"],["0.916666666666667","rgba(9,70,139,1)"],["0.958333333333333","rgba(9,59,123,1)"],["1","rgba(8,48,107,1)"]],"showscale":false,"z":[145.27,134.61,134.09,127.14,113.69,101.4,101.33,96.69,90.76,88.99,87.93,85.1,71.5,70.05,69.5,69.45,69.07,68.92,68.77,68.71,68.23,65.54,57.46,54.95,54.36,48.26,45.96,39.48,36.98,35.45,32.81,32.23,0],"text":["Suriname","Belize","Barbados","Aruba","Antigua and Barbuda","Brazil","Jamaica","Argentina","Dominica","El Salvador","St. Vincent and the Grenadines","St. Lucia","Grenada","Costa Rica","Uruguay","Bolivia","St. Kitts and Nevis","Ecuador","República Dominicana","Bahamas","Colombia","México","Trinidad and Tobago","Panamá","Haití","Nicaragua","Honduras","Perú","Guyana","Paraguay","Chile","Guatemala","No disponible"],"locations":["SUR","BLZ","BRB","ABW","ATG","BRA","JAM","ARG","DMA","SLV","VCT","LCA","GRD","CRI","URY","BOL","KNA","ECU","DOM","BHM","COL","MEX","TTO","PAN","HTI","NIC","HND","PER","GUY","PRY","CHL","GTM","VEN"],"marker":{"line":{"colorbar":{"title":"","ticklen":2},"cmin":0,"cmax":145.27,"colorscale":[["0","rgba(247,251,255,1)"],["0.0416666666666667","rgba(239,246,252,1)"],["0.0833333333333333","rgba(230,240,250,1)"],["0.125","rgba(222,235,247,1)"],["0.166666666666667","rgba(214,230,244,1)"],["0.208333333333333","rgba(206,224,242,1)"],["0.25","rgba(198,219,239,1)"],["0.291666666666667","rgba(185,213,234,1)"],["0.333333333333333","rgba(172,208,230,1)"],["0.375","rgba(158,202,225,1)"],["0.416666666666667","rgba(142,193,221,1)"],["0.458333333333333","rgba(125,183,218,1)"],["0.5","rgba(107,174,214,1)"],["0.541666666666667","rgba(94,165,209,1)"],["0.583333333333333","rgba(81,155,203,1)"],["0.625","rgba(66,146,198,1)"],["0.666666666666667","rgba(57,135,192,1)"],["0.708333333333333","rgba(46,124,187,1)"],["0.75","rgba(33,113,181,1)"],["0.791666666666667","rgba(27,102,173,1)"],["0.833333333333333","rgba(19,91,164,1)"],["0.875","rgba(8,81,156,1)"],["0.916666666666667","rgba(9,70,139,1)"],["0.958333333333333","rgba(9,59,123,1)"],["1","rgba(8,48,107,1)"]],"showscale":false,"color":"rgba(128,128,128,1)","width":0.8}},"hovertemplate":["Suriname<br><b>2020: <\/b>145.27<br><b>2019: <\/b>82.3<br><b>Cambio: <\/b>62.97<extra><\/extra>","Belize<br><b>2020: <\/b>134.61<br><b>2019: <\/b>105.08<br><b>Cambio: <\/b>29.53<extra><\/extra>","Barbados<br><b>2020: <\/b>134.09<br><b>2019: <\/b>122.22<br><b>Cambio: <\/b>11.87<extra><\/extra>","Aruba<br><b>2020: <\/b>127.14<br><b>2019: <\/b>81.29<br><b>Cambio: <\/b>45.86<extra><\/extra>","Antigua and Barbuda<br><b>2020: <\/b>113.69<br><b>2019: <\/b>84.47<br><b>Cambio: <\/b>29.22<extra><\/extra>","Brazil<br><b>2020: <\/b>101.40<br><b>2019: <\/b>89.47<br><b>Cambio: <\/b>11.93<extra><\/extra>","Jamaica<br><b>2020: <\/b>101.33<br><b>2019: <\/b>93.86<br><b>Cambio: <\/b>7.47<extra><\/extra>","Argentina<br><b>2020: <\/b> 96.69<br><b>2019: <\/b>90.38<br><b>Cambio: <\/b>6.31<extra><\/extra>","Dominica<br><b>2020: <\/b> 90.76<br><b>2019: <\/b>85.72<br><b>Cambio: <\/b>5.04<extra><\/extra>","El Salvador<br><b>2020: <\/b> 88.99<br><b>2019: <\/b>69.4<br><b>Cambio: <\/b>19.58<extra><\/extra>","St. Vincent and the Grenadines<br><b>2020: <\/b> 87.93<br><b>2019: <\/b>75.2<br><b>Cambio: <\/b>12.73<extra><\/extra>","St. Lucia<br><b>2020: <\/b> 85.10<br><b>2019: <\/b>61.32<br><b>Cambio: <\/b>23.78<extra><\/extra>","Grenada<br><b>2020: <\/b> 71.50<br><b>2019: <\/b>59.08<br><b>Cambio: <\/b>12.42<extra><\/extra>","Costa Rica<br><b>2020: <\/b> 70.05<br><b>2019: <\/b>58.38<br><b>Cambio: <\/b>11.67<extra><\/extra>","Uruguay<br><b>2020: <\/b> 69.50<br><b>2019: <\/b>65.91<br><b>Cambio: <\/b>3.58<extra><\/extra>","Bolivia<br><b>2020: <\/b> 69.45<br><b>2019: <\/b>59<br><b>Cambio: <\/b>10.45<extra><\/extra>","St. Kitts and Nevis<br><b>2020: <\/b> 69.07<br><b>2019: <\/b>56.22<br><b>Cambio: <\/b>12.85<extra><\/extra>","Ecuador<br><b>2020: <\/b> 68.92<br><b>2019: <\/b>51.83<br><b>Cambio: <\/b>17.1<extra><\/extra>","República Dominicana<br><b>2020: <\/b> 68.77<br><b>2019: <\/b>53.76<br><b>Cambio: <\/b>15.01<extra><\/extra>","Bahamas<br><b>2020: <\/b> 68.71<br><b>2019: <\/b>58.84<br><b>Cambio: <\/b>9.87<extra><\/extra>","Colombia<br><b>2020: <\/b> 68.23<br><b>2019: <\/b>52.28<br><b>Cambio: <\/b>15.95<extra><\/extra>","México<br><b>2020: <\/b> 65.54<br><b>2019: <\/b>53.75<br><b>Cambio: <\/b>11.79<extra><\/extra>","Trinidad and Tobago<br><b>2020: <\/b> 57.46<br><b>2019: <\/b>45.12<br><b>Cambio: <\/b>12.34<extra><\/extra>","Panamá<br><b>2020: <\/b> 54.95<br><b>2019: <\/b>41.04<br><b>Cambio: <\/b>13.91<extra><\/extra>","Haití<br><b>2020: <\/b> 54.36<br><b>2019: <\/b>47.69<br><b>Cambio: <\/b>6.68<extra><\/extra>","Nicaragua<br><b>2020: <\/b> 48.26<br><b>2019: <\/b>42.14<br><b>Cambio: <\/b>6.12<extra><\/extra>","Honduras<br><b>2020: <\/b> 45.96<br><b>2019: <\/b>40.29<br><b>Cambio: <\/b>5.67<extra><\/extra>","Perú<br><b>2020: <\/b> 39.48<br><b>2019: <\/b>27.12<br><b>Cambio: <\/b>12.36<extra><\/extra>","Guyana<br><b>2020: <\/b> 36.98<br><b>2019: <\/b>39.79<br><b>Cambio: <\/b>-2.81<extra><\/extra>","Paraguay<br><b>2020: <\/b> 35.45<br><b>2019: <\/b>26.11<br><b>Cambio: <\/b>9.35<extra><\/extra>","Chile<br><b>2020: <\/b> 32.81<br><b>2019: <\/b>27.91<br><b>Cambio: <\/b>4.9<extra><\/extra>","Guatemala<br><b>2020: <\/b> 32.23<br><b>2019: <\/b>26.59<br><b>Cambio: <\/b>5.64<extra><\/extra>","No disponible<br><b>2020: <\/b>  0.00<br><b>2019: <\/b>0<br><b>Cambio: <\/b>0<extra><\/extra>"],"type":"choropleth","geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+
+    </div>
+    <div class="col-xs-2">
+        </div>
+  </div>
+  </div>
+  </div>
+  <div class="row">
+    </div>
+  </div>
+
+<script>
+$(document).ready(function () {
+  // add bootstrap table styles to pandoc tables
+  $('tr.header').parent('thead').parent('table').addClass('table table-striped table-hover');
+
+    var images = $('.pages img');
+  images.filter(function() {
+      if ($(this).parent().attr("class") == "figure") {
+          return(false)
+      } else {
+          return(true);
+      }
+  }).wrap("<div class='figure'></div>");
+  images.addClass("image-thumb").wrap("<div class='panel-body'></div>");
+  $('.figure p.caption').wrap("<div class='panel-footer'></div>");
+  $('.figure').addClass('panel panel-default');
+  
+    $('.pages img')
+ 	  .addClass("image-lb");
+  $('.pages').magnificPopup({
+	      type:'image',
+	      closeOnContentClick: false,
+	      closeBtnInside: false,
+        delegate: 'img',
+	      gallery: {enabled: false },
+          removalDelay: 500,
+          callbacks: {
+              beforeOpen: function() {
+                // just a hack that adds mfp-anim class to markup
+                this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+              }
+          },
+          mainClass: 'mfp-move-from-top',
+	      image: {
+	        verticalFit: true,
+            titleSrc: 'alt'
+	      }
+ 	    });
+ 	
+    
+    $('#toc ul li').first().addClass("active");
+    $('#toc ul li').attr("data-target", function() {
+        return($(this).children("a").attr("href"));
+    })
+    $('body .section.level1').first().addClass("active");
+    $('body .section.level1').not('.active').hide();
+    
+    $('#toc a[href*="#"]').click(function() {
+
+      var id = $(this).attr("href");
+      if (id === "#") return;
+      if (id.substring(0, 8) === "#dyntab-") return;
+      toggle_page(id);
+
+      // Menu
+      var menu_entry = $(".menu li[data-target='"+id+"']");
+      menu_entry.addClass("active");
+      $(".menu li").not(menu_entry).removeClass("active"); 
+      
+
+    });
+
+    function toggle_page(id) {
+      $(".page").not(page).removeClass("active").hide();
+      window.page = id;
+      var page = $(window.page);
+      window.location.hash = window.page;
+      //$(this).addClass("active");
+
+      page.show();
+
+      var totop = setInterval(function () {
+        $(".pages").animate({scrollTop: 0}, 0);
+      }, 10);
+
+      setTimeout(function () {
+        page.addClass("active");
+        setTimeout(function () {
+          clearInterval(totop);
+        }, 1000);
+      }, 100);
+
+      window.dispatchEvent(new Event('resize'));
+
+    }
+
+
+    $(".menu li").click(function () {
+
+      toggle_page($(this).data("target"));
+
+      // Menu
+      if (!$(this).data("target")) return;
+      if ($(this).is(".active")) return;
+      $(".menu li").not($(this)).removeClass("active");
+      $(this).addClass("active");
+
+    });
+  
+    
+
+
+    window.page = window.location.hash;
+    if (window.page != "") {
+      $(".menu").find("li[data-target=" + window.page + "]").trigger("click");
+    }
+
+    /* init material bootstrap js */
+    $.material.init();
+});
+</script>
+
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

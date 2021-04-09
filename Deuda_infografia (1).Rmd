@@ -1,0 +1,1031 @@
+---
+title: "![image](logo-iii.png)"
+output: 
+  rmdformats::material:
+    self_contained: no
+---
+
+```{css echo=FALSE}
+/*"En este chunk se recoge el documento css, que sirve para establecer condiciones de formato en el caso de los documentos en HTML. Por tratarse de un chunk de este tipo, los comentorios se escriben dentro de asteriscos y barras (de este modo /*""*/, las comillas se agregan para diferenciar el color del comentario)"*/
+  
+/*----------------------------------------------------*/
+/*"    <<-----  Algunos insumos y notas  ----->>     "*/  
+/*----------------------------------------------------*/
+
+/*"<<<---- Colores: 
+ Página para determinar el código HEX: https://urldefense.com/v3/__https://www.rapidtables.com/convert/color/rgb-to-hex.html*22*/__;JSo!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6-pxxPuo$    
+  
+/*"<<<---- Cuadros: 
+  Bordes redondos: https://urldefense.com/v3/__https://www.w3schools.com/css/css_border_rounded.asp__;!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6GgPH0n0$ 
+  Barras en los bordes: https://urldefense.com/v3/__https://www.w3schools.com/css/css_border_shorthand.asp__;!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6UWKqHgE$  "*/
+  
+/*"Formato del eje x: https://urldefense.com/v3/__https://plotly.com/r/tick-formatting/*22*/__;JSo!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea64sMdHCs$   
+  
+/*"Codigo para knit el documento"
+#render("Deuda_infografia.Rmd", html_document(pandoc_args = "--self-contained"))
+#browseURL("Deuda_infografia.html")
+*/  
+  
+/*-------------------------------------------------------------*/
+/*"    <<---Modificando el formato de la plantilla ---->>     "*/  
+/*-------------------------------------------------------------*/
+  
+/*"Escondiendo la barra de navegación que viene predetenminada con el paquete rmdformats"*/  
+  .navbar{visibility: hidden}
+
+/* "Cambiando el color del panel o barra de arriba" */
+.header-panel { background-color: #2D5E71;          /*Color del fondo */ }
+
+/* "Modificando el texto del panel o barra de arriba" */
+h1.title {
+  font-family: Gill Sans MT;       /*"Fuente del texto"*/
+  font-size: 15pt;                /*"Tamaño del texto"*/
+  font-weight: bold;             /*"Texto en negrita"*/
+}
+
+/* "Poniendo el texto del titulo 1 (h1 o #) en blanco, porque la plantilla agrega en cada pagina el nombre que tienen en el medu de la izquierda" */
+.pages h1 {
+  color: white   /*"Color de texto"*/ }  
+  
+/*"Cambiando la fuente y tamaño del texto para el cuerpo" */
+body{
+  font-family: Gill Sans MT;          /*"Fuente del texto"*/
+  font-size: 9.2pt;                  /*"Tamaño del texto"*/
+  line-height: 0.6;                 /*"Espacio interlineado"*/ }
+
+/* "Poniendo el texto del titulo 1 (El que aparece antes del titulo de la infografia) en blanco y tamaño uno" */
+  h1{
+  font-family: Gill Sans MT;       /*"Fuente del texto"*/
+  font-size: 1.3pt;                 /*"Tamaño del texto"*/
+  font-weight: bold;             /*"Texto en negrita"*/
+  color:white;                  /*"Color de texto"*/     }
+
+/*"Creando funcion para caja texto"*/
+#example1 {
+  padding: 10px;                          /*"Margenes"*/
+  line-height: 1.2;                      /*"Espacio interlineado"*/
+  font-family: Gill Sans MT;            /*"Fuente del texto"*/
+  border-left: 20px solid #2D5E71;     /*"Tamaño de la linea de color a la izquierda"*/  
+  background-color: #EEEEEE;          /*"Color del fondo"*/
+  font-size: 16;                     /*"Tamaño del texto"*/
+  border-radius: 8px;               /*"Tamaño de la curva del cuadro en las esquinas"*/
+  font-weight: 700;                /*"Texto en negrita"*/
+  widht: 60px;  
+  text-align: justify;
+  text-justify: inter-word;                    /*"Texto justificado"*/   
+  color:  black;
+}
+
+/*"El </div> que aparece debajo de este código sirvió para ampliar el tamaño de la hoja en que estaba contenido el texto y los gráficos."*/
+
+```  
+</div>
+
+# <b>Evolución y composición</b>
+
+<br>
+<br>
+<f size="6"><s style="color:white">/</f></s>
+<p align="center"><font size="6.0"><span style="color: #2D5E71;">**Panorama general de la deuda del SPNF**</span></font></p></wk> 
+<p align="center"><font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Departamento de Programación Monetaria y Estudios Económicos</span></font></p></wk> 
+<p align="center"><font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Subdirección de Asuntos Fiscales</span></font></p></wk> 
+<p align="center"><font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Abril 2021</span></font></p></wk> 
+<br>
+<br>
+
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE}
+#----------------------------------------------------
+#-------------- Librerias y datos ------------------
+#----------------------------------------------------
+
+#<<<---- Librerias: ----->>>> 
+library(readxl)        # Libreria para cargar datos en formato excel
+library(plotly)        # Libreria para crear gráficos interactivos
+library(dplyr)         # Libreria para crear gráficos interactivos
+library(tidyverse)     # Libreria para crear gráficos interactivos
+
+#<<<---- Carga de los Datos generales: ----->>>> 
+
+#  1. Cargando los datos:
+datos <- read_excel("Base de Datos Infografía Deuda.xlsx", sheet = "Data anual")
+
+#  2. Redondeando los datos a dos decimales:
+datos <- rapply(object = datos, f = round, classes = "numeric", how = "replace", digits = 2) 
+
+#  3. Convirtiendo la variable años a texto, así no se cortan los años en los ploltys
+datos$Años <- as.character(datos$Años)
+
+#<<<---- Dividiendo los Datos en varias bases por longitudes: ----->>>> 
+
+# Datos del 2000 al 2020*
+datos_2020 <- subset(datos, Años<2021)
+
+# Datos del 2008 al 2020*
+datos_2008 <- subset(datos, Años>2007 & Años<2026)
+
+# Datos del 2013 al 2020*
+datos_2013 <- subset(datos, Años>2012& Años<2021)
+
+# Datos del 2021 al 2060*
+datos_2060 = subset(datos, Años>2020)
+```
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE}
+      #----------------------------------------------------
+      #  -------   Embedding plotly in HTML R -----------
+      #----------------------------------------------------
+
+# Por default, al generar un plotly se puede imprimir (knit) en un documento HTML, pero al utilizarlo con esta plantilla (rmdformart::material), los gráficos no se ajustaban a la ventana al hacer zoom, lo que podria causar alguna distorción dependiendo el ordenador en que se abra o el tamaño de la pc (ya que si se ponia un size muy pequeño se iba a ver un espacio muy grande) (ver output: deuda_infografia en la carpeta de infografias para entender como salia). En ese sentido, para resolver este problema se optó por usar la api de Plotly para cargar los datos a chart studio y subirlo en este rmarkdown utilizando la función html <iframe>, de modo que se pudiera abrir desde cualquier ordenador sin problema. 
+
+# Fuente: 
+# https://urldefense.com/v3/__https://plotly.com/r/getting-started-with-chart-studio/__;!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6Y5CVRtg$ 
+# https://urldefense.com/v3/__https://plotly.com/chart-studio-help/embed-graphs-in-websites/*step-8-customize-the-iframe__;Iw!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6Z4geVYQ$ 
+
+#<<<---- Estableciendo la api: ----->>>> 
+#Sys.setenv("plotly_username"="valeria12131")          # Nombre de usuario de chart studio
+#Sys.setenv("plotly_api_key"="jamgmqZENXXBcQ4RiNzB")   # Número de la API 
+#Sys.setenv("plotly_domain"="https://plotly.your-company.com")
+#api_create(fig1, filename = "grafico1")              # Código para cargar los gráficos 
+
+
+#<<<---- Código para la opción 2: ----->>>> 
+# Otra alternativa es guardar los graficos en html y adjuntarlos en este documento con la misma función. El problema con esto es que los gráficos solo se imprimiran cuando se abran en una pc con acceso al directorio donde se guardaron, por lo que no es muy conveniente.
+
+#library(htmlwidgets)
+#saveWidget(fig1, "p1.html", selfcontained = F, libdir = "lib")
+
+#htmltools::tags$iframe(
+#  src = "p1.html", 
+#  scrolling = "no", 
+#  seamless = "seamless",
+#  frameBorder = "0",
+#  height="525",
+#  width="100%")
+
+# Función para reducir el size del bundle asi los gráficos cargan mas rapido
+widget_file_size <- function(p) {
+  d <- tempdir()
+  withr::with_dir(d, htmlwidgets::saveWidget(p, "index.html"))
+  f <- file.path(d, "index.html")
+  mb <- round(file.info(f)$size / 1e6, 3)
+  message("File is: ", mb," MB")
+}
+```
+
+
+<div id="example1">
+<p align="justify"><font size="4.0"><span style="color: black;">
+En 2020, y como consecuencia de la crisis sanitaria y de las necesidades de financiamiento presupuestadas, la deuda del SPNF como porcentaje del PIB aumentó en 16.2 puntos porcentuales, hasta alcanzar 56.6% del PIB. </p>
+</div>
+
+<br>
+
+<br>
+
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE, height=800, width=700}
+
+# -----------<<<< Gráfico 1: Deuda pública y endeudamiento neto del SPNF \n(%  PIB) >>>>--------------
+
+fig1 <- plot_ly(datos_2020)
+fig1 <- fig1 %>% add_trace(x = ~Años, y = ~`Deuda SPNF (% PIB)`, type = 'bar', name = 'Deuda SPNF', 
+            marker = list(color = '#7EB4C0'))
+
+fig1 <- fig1 %>% add_trace(x = ~Años, y = ~`Préstamo/Endeudamiento Neto (% PIB)`, type = 'scatter', mode = 'lines+markers', name = 'Endeudamiento neto SPNF', yaxis = 'y2',
+            line = list(color = '#325E68', width = 4.0),
+            marker = list(color = '#325E68', size = 8.0, line=list(color = '#325E68', width = 3)))
+
+fig1 <- fig1 %>% layout(
+  title = '<b>Deuda pública y endeudamiento neto del SPNF</b> \n(%  PIB)',
+  font= list(family = "Gill Sans MT", size=13),
+  hovermode = 'compare',
+  width = 700,
+  xaxis = list(title = "", tickangle = 270),
+  yaxis = list(side = 'left', title = 'Deuda SPNF', showgrid = FALSE, zeroline = FALSE, automargin=F, range = c(0,60)),
+  yaxis2 = list(side = 'right', overlaying = "y", title = 'Endeudamiento neto SPNF', showgrid = FALSE, zeroline = FALSE, automargin=T, range = c(-8,1)),
+  legend = list(orientation = 'h', x = 0.32, y = -0.14))%>% 
+config(displayModeBar = FALSE)
+
+fig1 <- fig1 %>% layout(
+   margin = list(l = 55, r = 20, b = 100, t = 30),
+   annotations = list(text = 'Fuente: BCRD  y Crédito Público.',
+                     font = list(family = "Gill Sans MT", size = 12, color="grey"),
+                     showarrow = F,
+                     xref = 'paper', x = -0.05,
+                     yref = 'paper', y = -0.30))
+
+
+# Función para alinear el gráfico en el centro
+ppc <- htmltools::div( fig1, align="center") 
+ppc  #Imprimiendo/mostrando el gráfico
+
+# Cargando el gráfico a Chart Studio 
+#api_create(fig1, filename = "grafico1", sharing= "public") 
+#https://urldefense.com/v3/__https://plotly.com/*valeria12131/1/__;fg!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6ZIY86e8$ 
+
+#htmlwidgets::saveWidget(config(fig1, displayModeBar = FALSE), "graph.html")
+```
+
+
+<div id="example1">
+  <p>En 2020, este incremento se explica por el mayor endeudamiento del SPNF, la depreciación cambiaria y la contracción del PIB. En este sentido, solo el 38.2% del aumento de la deuda se debió al resultado primario deficitario del SPNF. </p>
+</div>
+
+<br>
+
+<br> 
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE}
+#  -----------<<<< Deuda pública interna por acreedor (% del total)   >>>>--------------
+dat<- read_excel("Base de Datos Infografía Deuda.xlsx", sheet = "Descom")
+dat$Años <-  as.character(dat$Años)
+dat <- rapply(object = dat, f = round, classes = "numeric", how = "replace", digits = 2) 
+
+fig2 <- plot_ly(dat, x = ~Años, y = ~`Resultado primario`, type = 'bar', name = 'Resultado primario',marker = list(color = '#519BA5'))
+
+fig2 <- fig2 %>% add_trace(y = ~`Tasa de interés real`, name = 'Tasa de interés real',marker = list(color = '#6ABED8'))
+
+fig2 <- fig2 %>% add_trace(y = ~`Crecimiento real PIB`, name = 'Crecimiento real PIB',marker = list(color = '#FFBE86'))
+
+fig2 <- fig2 %>% add_trace(y = ~`Depreciación del tipo de cambio`, name = 'Depreciación del tipo de cambio',marker = list(color = '#83B386'))
+
+fig2 <- fig2 %>% add_trace(y = ~`Residual`, name = 'Residual',marker = list(color = '#568C5A'))
+
+fig2 <- fig2 %>% add_trace(x = ~Años, y = ~`Cambio en la deuda`, type = 'scatter', mode = 'lines+markers', name = 'Cambio en la deuda',
+            line = list(color = '#325E68', width = 4.0),
+            marker = list(color = '#325E68', size = 8, line=list(color = '#325E68', width = 3)))
+
+fig2 <- fig2 %>% layout(title = '<b>Descomposición de variación de deuda SPNF</b> \n(% PIB)',
+font= list(family = "Gill Sans MT", size=13),
+         hovermode = 'compare',
+         width = 700,
+         yaxis = list(title = "", range = c(-7, 20)),
+         xaxis = list(title = ""),
+         barmode = 'relative',
+         showgrid = FALSE, zeroline = FALSE, automargin=T,
+legend = list(orientation = 'h', x = 0.20, y = -0.095)) %>% 
+config(displayModeBar = FALSE)
+
+
+fig2 <- fig2 %>% layout(
+   margin = list(l = 55, r = 20, b = 140, t = 30),
+   annotations = list(text = 'Fuente: BCRD  y Crédito Público.',
+                     font = list(family = "Gill Sans MT", size = 12, color="grey"),
+                     showarrow = F,
+                     xref = 'paper', x = -0.05,
+                     yref = 'paper', y = -0.53))
+
+# Función para alinear el gráfico en el centro
+ppc <- htmltools::div( fig2, align="center") 
+ppc  #Imprimiendo/mostrando el gráfico
+
+ # Cargando el gráfico a Chart Studio 
+#api_create(fig2, filename = "grafico2", sharing= "public") 
+#https://urldefense.com/v3/__https://plotly.com/*valeria12131/3/__;fg!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6f_rsAMg$ 
+```
+
+<div id="example1">
+  <p>El financiamiento de 2020 se compuso, principalmente, por bonos globales en moneda extranjera, los cuales se incrementaron en US$7,896.4 con respecto a 2019, lo que supone un aumento de 32.7%.</p>
+</div>
+
+<br>
+
+<br>
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE}
+# Datos
+aumento<- read_excel("Base de Datos Infografía Deuda.xlsx", sheet = "Aumento SPNF")
+aumento<- rapply(object = aumento, f = round, classes = "numeric", how = "replace", digits = 2) 
+
+
+fig3 <- plot_ly(aumento, x = ~`Externa-Acreedores Privados`, y = ~Tipo, type = 'bar', orientation = 'h', name = 'Externa-Acreedores privados', marker = list(color = '#3B5F5C', width = 3))
+
+fig3 <- fig3 %>% add_trace(x = ~`Externa-Multilateral`, name = 'Externa-Multilateral', marker = list(color = '#83B386', width = 3))
+
+fig3 <- fig3 %>% add_trace(x = ~Interna, name = 'Interna', marker = list(color = '#578F5B', width = 3))
+
+fig3 <- fig3 %>% add_trace(x = ~`Externa-Bilateral`, name = 'Externa-Bilateral', marker = list(color = '#FFBE86', width = 3))
+
+fig3 <- fig3 %>% add_trace(x = ~Nacional, name = 'Nacional', marker = list(color = '#519BA5', width = 3))
+
+fig3 <- fig3 %>% add_trace(x = ~Extranjera, name = 'Extranjera', marker = list(color = '#2D5E71', width = 3))
+
+fig3 <- fig3 %>% layout(title= '<b>Aumento de la deuda SPNF</b>\n(2020 vs 2019, US$ millones)
+', barmode = 'stack',
+font= list(family = "Gill Sans MT", size=13),
+     legend = list(x = 90, y = 0.5),
+     width = 700,
+         xaxis = list(title = "", range = c(0,9000), dtick=1000),
+         yaxis = list(title ="")) %>% 
+config(displayModeBar = FALSE)
+
+fig3 <- fig3 %>% layout(
+   margin = list(l = 55, r = 20, b = 70, t = 50),
+   annotations = list(text = 'Fuente: BCRD  y Crédito Público.',
+                     font = list(family = "Gill Sans MT", size = 12, color="grey"),
+                     showarrow = F,
+                     xref = 'paper', x = -0.05,
+                     yref = 'paper', y = -0.15))
+
+# Función para alinear el gráfico en el centro
+ppc <- htmltools::div( fig3, align="center") 
+ppc  #Imprimiendo/mostrando el gráfico
+
+# Cargando el gráfico a Chart Studio 
+#api_create(fig3, filename = "grafico3", sharing= "public") 
+#https://urldefense.com/v3/__https://plotly.com/*valeria12131/5/__;fg!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6O1FFFHA$ 
+```
+
+
+<div id="example1">
+  <p>Esta mayor contratación de deuda en los mercados internacionales aumentó la participación de la deuda externa en 3.9 puntos porcentuales, de manera que, a finales del 2020, esta representó el 69.0% del total de deuda. </p>
+</div>
+
+<br>
+
+<br>
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE}
+#  -----------<<<< Deuda SPNF por origen (% del total)  >>>>--------------
+
+fig4 <- plot_ly(datos_2008, x = ~Años, y = ~`Deuda Externa (% Total)`, type = 'bar', name = 'Deuda externa',marker = list(color = '#519BA5'))
+fig4 <- fig4 %>% add_trace(y = ~`Deuda Interna (% Total)`, name  = 'Deuda interna',
+            marker = list(color = '#95C7C1'))
+fig4 <- fig4 %>% layout(title = '<b>Deuda SPNF por origen</b> \n(% total)',
+font= list(family = "Gill Sans MT", size=13),
+         hovermode = 'compare',
+         xaxis = list(title = ""),
+          width = 700,
+         barmode = 'stack',
+         yaxis = list(side = 'left', title = '', showgrid = FALSE, zeroline = FALSE, automargin=T),
+legend = list(orientation = 'h', x = 0.32, y = -0.058)) %>% 
+config(displayModeBar = FALSE)
+
+
+fig4 <- fig4 %>% layout(
+   margin = list(l = 55, r = 20, b = 98, t = 45),
+   annotations = list(text = 'Fuente: Crédito Público.',
+                     font = list(family = "Gill Sans MT", size = 12, color="grey"),
+                     showarrow = F,
+                     xref = 'paper', x = 0.0001,
+                     yref = 'paper', y = -0.2))
+
+# Función para alinear el gráfico en el centro
+ppc <- htmltools::div( fig4, align="center") 
+ppc  #Imprimiendo/mostrando el gráfico
+
+# Cargando el gráfico a Chart Studio 
+#api_create(fig4, filename = "grafico4", sharing= "public") 
+#https://urldefense.com/v3/__https://plotly.com/*valeria12131/7/__;fg!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6LTjjvSo$ 
+```
+
+
+<div id="example1">
+  <p>En cuanto a la composición de la deuda por tasas, el 86.8% de la deuda total se contrató a tasa fija. Estos altos niveles de deuda con tasa invariable, reducen el riesgo de aumento del servicio de la deuda ante una posible normalización de las tasas de interés internacionales una vez se consolide el proceso de recuperación global. </p>
+</div>
+
+<br>
+
+<br>
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE}
+# Composición de la deuda SPNF por tasas % total)
+fig5 <- plot_ly(datos_2013, x = ~Años, y = ~`Fija (% Total)`, type = 'bar', name = 'Tasa fija',
+            marker = list(color = '#4F9BB9'))
+fig5 <- fig5 %>% add_trace(y = ~`Variable (% Total)`, name  = 'Tasa variable',
+            marker = list(color = '#A8CDDC'))
+fig5 <- fig5 %>% layout(title = '<b>Composición de la deuda SPNF por tasas</b>  \n(% total)',
+font= list(family = "Gill Sans MT", size=13),
+         hovermode = 'compare',
+         xaxis = list(title = ""),
+          width = 700,
+         barmode = 'stack',
+         yaxis = list(side = 'left', title = '', showgrid = FALSE, zeroline = FALSE, automargin=T),
+legend = list(orientation = 'h', x = 0.32, y = -0.05)) %>% 
+config(displayModeBar = FALSE)
+
+fig5 <- fig5 %>% layout(
+   margin = list(l = 55, r = 20, b = 92, t = 45),
+   annotations = list(text = 'Fuente: Crédito Público.',
+                     font = list(family = "Gill Sans MT", size = 12, color="grey"),
+                     showarrow = F,
+                     xref = 'paper', x = 0.0001,
+                     yref = 'paper', y = -0.185))
+
+# Función para alinear el gráfico en el centro
+ppc <- htmltools::div( fig5, align="center") 
+ppc  #Imprimiendo/mostrando el gráfico
+
+# Cargando el gráfico a Chart Studio 
+#api_create(fig5, filename = "grafico5", sharing= "public") 
+#https://urldefense.com/v3/__https://plotly.com/*valeria12131/9/__;fg!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6bUdELD4$ 
+```
+
+
+<div id="example1">
+  <p>Asimismo, se observa un aumento de la participación de la deuda en moneda extranjera como porcentaje del total. A finales del 2020, la deuda en moneda extranjera ascendió a 72.0%, nivel no observado desde los años previos a la recompra de la deuda de Petrocaribe. </p>
+</div>
+
+<br>
+
+<br>
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE}
+# En esta parte se selecciona los datos del 2020y solo las variables que van en el gráfico de pie
+library(data.table)  
+d0<-subset(datos, Años==2020, select=c(`Nacional (% Total)`,`Extranjera (% total)`))           # Seleccionar la data
+d1<-  transpose(d0)                                                                         # Trasponer las columnas
+colnames(d0) <- c("Moneda nacional", "Moneda extranjera")                       # Cambiarle el nombre a las columnas
+d1$moneda<- colnames(d0)                                   # Creando una variable que tenga el nombre a las columnas
+rownames(d1) <- colnames(d0)                                 # Seleccionando el nombre de las filas con las columnas
+
+#  -----------<<<< Deuda pública SPNF por moneda (2020, % del total)  >>>>--------------
+fig6 <- d1 %>% plot_ly(labels = ~moneda, values = ~V1, marker = list(colors = c('#407241', '#7EB47A')))
+fig6 <- fig6 %>% add_pie(hole = 0.6)
+fig6 <- fig6%>% layout(title = '<b>Deuda pública SPNF por moneda</b> \n(2020, % del total)', yaxis = list(title = ''), font= list(family = "Gill Sans MT", size=13.5),
+   width = 500,
+   legend = list(x = 100, y = 0.5)) 
+
+fig6 <- fig6 %>% layout(
+   margin = list(l = 55, r = 20, b = 0, t = 30),
+   annotations = list(text = 'Fuente: Crédito Público.',
+                     font = list(family = "Gill Sans MT", size = 12, color="grey"),
+                     showarrow = F,
+                     xref = 'paper', x = 0.0001,
+                     yref = 'paper', y = 0.02))%>%
+   config(displayModeBar = FALSE)
+
+# Función para alinear el gráfico en el centro
+ppc <- htmltools::div( fig6, align="center") 
+ppc  #Imprimiendo/mostrando el gráfico
+
+# Cargando el gráfico a Chart Studio 
+# api_create(fig6, filename = "grafico6", sharing= "public") 
+#https://urldefense.com/v3/__https://plotly.com/*valeria12131/11/__;fg!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6SInk_mA$ 
+```
+
+
+<div id="example1">
+  <p>A pesar del desembolso de préstamos de emergencia otorgados por organismos internacionales para hacer frente a la crisis sanitaria, la proporción de deuda externa multilateral ha continuado en descenso en el último quinquenio y en 2020 representó el 21.4% de la deuda externa.</p>
+</div>
+
+<br>
+
+<br>
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE}
+d_2013 <- subset(datos, Años==2013)
+d_2020 <- subset(datos, Años==2020)
+
+fig7 <- plot_ly(
+    type = 'scatterpolar',
+    fill = 'toself') 
+
+# Se realizo un template para el hover, ya que originalmente cuando se pone el mouse por encima aparece el nombre de la variable como theta:nombre y el dato como r:%. En ese sentido, la plantilla para que no aparezca es:  "%{theta}<br>%{r}<extra></extra>".
+
+
+fig7 <- fig7 %>%
+  add_trace(r = c(d_2013$`Deuda Bilateral`, d_2013$`Deuda Multilateral`,d_2013$`Acreedores Privados`), theta = c('<b>Bilateral</b>','<b>Multilateral</b>','<b>Acreedores privados</b>'), name = '2013', marker = list(color = "white", size = 10, line = list(width = 2)), hovertemplate= "%{theta}<br>%{r}<extra></extra>")
+
+fig7 <- fig7 %>%
+  add_trace(r = c(d_2020$`Deuda Bilateral`, d_2020$`Deuda Multilateral`,d_2020$`Acreedores Privados`), theta = c('<b>Bilateral</b>','<b>Multilateral</b>','<b>Acreedores privados</b>'), name = '2020', marker = list(color = "white", size = 10, line = list(width = 2)), hovertemplate= "%{theta}<br>%{r}<extra></extra>") 
+
+fig7 <- fig7 %>%
+layout(title= '<b>Deuda pública externa por acreedor</b> \n(% del total)', font= list(family = "Gill Sans MT", size=13), width= 500,  
+       legend = list(x = 100, y = 0.75))
+       polar = list( radialaxis = list(visible = T, range = c(0,75))) 
+
+fig7 <- fig7 %>% layout(
+   margin = list(l = 55, r = 20, b = 35, t = 75),
+   annotations = list(text = 'Fuente: Crédito Público.',
+                     font = list(family = "Gill Sans MT", size = 12, color="grey"),
+                     showarrow = F,
+                     hovermode = 'compare',
+                     xref = 'paper', x = -0.1,
+                     yref = 'paper', y = -0.11))%>%
+   config(displayModeBar = FALSE)
+
+# Función para alinear el gráfico en el centro
+ppc <- htmltools::div( fig7, align="center") 
+ppc  #Imprimiendo/mostrando el gráfico
+
+  # Cargando el gráfico a Chart Studio 
+#api_create(fig7, filename = "grafico7", sharing= "public") 
+#https://urldefense.com/v3/__https://plotly.com/*valeria12131/13/__;fg!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6BrrpNbg$ 
+```
+
+
+
+<div id="example1">
+  <p>La preferencia por utilizar bonos soberanos, también es evidente en el mercado interno. Dadas las nuevas emisiones en 2020, los bonos internos representan el 71.4% del total de deuda interna del SPNF. Es importante resaltar que el 100% del aumento de la deuda interna observado en el 2020 se explica por emisiones de bonos domésticos. </p>
+</div>
+
+<br>
+
+<br>
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE}
+#  -----------<<<< Deuda pública interna por acreedor (% del total)   >>>>--------------
+datos_fig8 <- subset(datos, Años==2013 | Años==2016 | Años==2020)
+datos_fig8$Años <-  as.character(datos_fig8$Años)
+
+
+fig8 <- plot_ly(datos_fig8, x = ~Años, y = ~`Bonos de Subastas`, type = 'bar', name = 'Bonos de subastas',marker = list(color = '#2D5E71'))
+fig8 <- fig8 %>% add_trace(y = ~`Bonos de Recap BCRD`, name = 'Bonos de recapitalización BCRD',marker = list(color = '#519BA5'))
+fig8 <- fig8 %>% add_trace(y = ~`Banca Comercial u Otras Instituciones Financieras`, name = 'Banca comercial u otras instituciones financieras',marker = list(color = '#A3D5C0'))
+fig8 <- fig8 %>% add_trace(y = ~`Bonos de CDEEE`, name = 'Bonos de CDEEE',marker = list(color = '#83B386'))
+fig8 <- fig8 %>% add_trace(y = ~`Bonos de Deuda Administrativa`, name = 'Bonos de deuda administrativa',marker = list(color = '#568C5A'))
+fig8 <- fig8 %>% add_trace(y = ~`Bonos del Tesoro (Ley 121-05)`, name = 'Bonos del tesoro (Ley 121-05)',marker = list(color = '#40685B'))
+fig8 <- fig8 %>% add_trace(y = ~`Título canjeado`, name = 'Título canjeado',marker = list(color = '#FFBE86'))
+fig8 <- fig8 %>% layout(title = '<b>Deuda pública interna por acreedor</b> \n(% del total)', yaxis = list(title = ''),  xaxis = list(title = ""),barmode = 'stack',        
+    width = 700,
+font= list(family = "Gill Sans MT", size=13),
+     legend = list(x = 100, y = 0.5)) %>%
+config(displayModeBar = FALSE)
+
+fig8 <- fig8 %>% layout(
+   margin = list(l = 55, r = 20, b = 50, t = 45),
+   annotations = list(text = 'Fuente: Crédito Público.',
+                     font = list(family = "Gill Sans MT", size = 12, color="grey"),
+                     showarrow = F,
+                     hovermode = 'compare',
+                     xref = 'paper', x = 0.0001,
+                     yref = 'paper', y = -0.15))
+
+
+# Función para alinear el gráfico en el centro
+ppc <- htmltools::div( fig8, align="center") 
+ppc  #Imprimiendo/mostrando el gráfico
+
+# Cargando el gráfico a Chart Studio 
+#api_create(fig8, filename = "grafico8", sharing= "public") 
+#https://urldefense.com/v3/__https://plotly.com/*valeria12131/15/__;fg!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6lkBPmu0$ 
+```
+
+
+# <b>Costo y perspectivas</b>
+
+<br>
+<br>
+<f size="6"><s style="color:white">/</f></s>
+<p align="center"><font size="6.0"><span style="color: #2D5E71;">**Panorama general de la deuda del SPNF**</span></font></p></wk> 
+<p align="center"><font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Departamento de Programación Monetaria y Estudios Económicos</span></font></p></wk> 
+<p align="center"><font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Subdirección de Asuntos Fiscales</span></font></p></wk> 
+<p align="center"><font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Abril 2021</span></font></p></wk> 
+<br>
+<br>
+
+<div id="example1">
+<p align="justify"><font size="4.0"><span style="color: black;">
+En consonancia con el aumento observado de la deuda del SPNF, el gasto en intereses ha alcanzado un máximo histórico de 26.2% de los impuestos en 2020, y a partir de 2019 excede el total de las erogaciones de las partidas que componen el antiguo gasto de capital.</p>
+</div>
+
+<br>
+
+<br>
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE}
+fig9 <- plot_ly(datos_2020)
+fig9 <- fig9 %>% add_trace(x = ~Años, y = ~`Intereses de la Deuda SPNF (% Impuestos)`, type = 'scatter', mode = 'lines+markers', name = '% Impuestos',
+            line = list(color = '#325E68', width = 3),
+            marker = list(color = '#325E68', size = 8, line=list(color = '#325E68', width = 3)))
+
+fig9 <- fig9 %>% add_trace(x = ~Años, y = ~`Intereses de la Deuda SPNF (% antiguo gasto capital)`, type = 'scatter',       mode = 'lines+markers', name = '% Antiguo gasto capital', yaxis = 'y2',
+      line = list(color = '#7EB4C0', width = 3),
+      marker = list(color = '#7EB4C0', size = 8, line=list(color = '#7EB4C0', width = 3)))
+
+
+fig9 <- fig9 %>% layout(title = '<b>Intereses de la deuda SPNF</b> \n(% impuestos y antiguo gasto capital)',
+font= list(family = "Gill Sans MT", size=11),
+         hovermode = 'compare',
+         width= 680,
+         xaxis = list(title = "", tickangle = 270),
+         yaxis = list(side = 'left', title = 'Impuestos', showgrid = FALSE, zeroline = FALSE, automargin=F, range = c(5,30)),
+         yaxis2 = list(side = 'right', overlaying = "y", title = 'Antiguo gasto capital', showgrid = FALSE, zeroline = FALSE, automargin=T, range = c(20,120)),
+legend = list(orientation = 'h', x = 0.32, y = -0.14)) %>% 
+config(displayModeBar = FALSE)
+
+fig9 <- fig9 %>% layout(
+   margin = list(l = 55, r = 20, b = 105, t = 50),
+   annotations = list(text = 'Fuente: Crédito Público, SIGEF, Dept. Internacional BCRD',
+                     font = list(family = "Gill Sans MT", size = 12, color="grey"),
+                     showarrow = F,
+                     xref = 'paper', x = 0.0001,
+                     yref = 'paper', y = -0.37))
+
+
+# Función para alinear el gráfico en el centro
+ppc <- htmltools::div( fig9, align="center") 
+ppc  #Imprimiendo/mostrando el gráfico
+
+# Cargando el gráfico a Chart Studio 
+#api_create(fig9, filename = "grafico9", sharing= "public") 
+#https://urldefense.com/v3/__https://plotly.com/*valeria12131/17/__;fg!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6E15ILbM$ 
+```
+
+
+<div id="example1">
+  <p>A pesar del aumento de los intereses de la deuda externa, debido al constante incremento del influjo de divisas de la economía, el ratio del servicio de la deuda externa como porcentaje de dólares generados por la economía ha permanecido relativamente invariable desde el 2013.</p>
+</div>
+
+<br>
+
+<br>
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE}
+# Datos
+Trimestral <- read_excel("Base de Datos Infografía Deuda.xlsx", sheet = "Trimestral")
+Trimestral<- rapply(object = Trimestral, f = round, classes = "numeric", how = "replace", digits = 2) 
+
+fig10 <- plot_ly(Trimestral)
+fig10 <- fig10 %>% add_trace(x = ~Periodo, y = ~`Servicio Deuda externa (% dólares generados por la Economía)`, type = 'bar',marker = list(color = '#5BB5A6'))
+fig10 <- fig10 %>% layout(title = '<b>Servicio deuda externa</b> \n(% dólares generados* por la economía)',
+font= list(family = "Gill Sans MT", size=13),
+         hovermode = 'compare',
+          width = 710,
+         xaxis = list(title = "", tickangle = 270),
+         yaxis = list(side = 'left', title = '', showgrid = FALSE, zeroline = FALSE, automargin=T, range = c(0,45)),
+legend = list(orientation = 'h', x = 0.32, y = -0.05)) %>% 
+config(displayModeBar = FALSE)
+
+fig10 <- fig10 %>% layout(
+   margin = list(l = 55, r = 20, b = 120, t = 30),
+   annotations = list(text = '*Incluye influjo de divisas por exportaciones nacionales y zonas francas, ingresos por turísmo, inversión extranjera directa y remesas.',
+                     font = list(family = "Gill Sans MT", size = 12, color="grey"),
+                     showarrow = F,
+                     xref = 'paper', x = 0.000009,
+                     yref = 'paper', y = -0.33))
+
+fig10 <- fig10 %>% layout(
+   margin = list(l = 55, r = 20, b = 150, t = 30),
+   annotations = list(text = 'Fuente: BCRD  y Crédito Público.',
+                     font = list(family = "Gill Sans MT", size = 12, color="grey"),
+                     showarrow = F,
+                     xref = 'paper', x = 0,
+                     yref = 'paper', y = -0.4))
+
+
+# Función para alinear el gráfico en el centro
+ppc <- htmltools::div( fig10, align="center") 
+ppc  #Imprimiendo/mostrando el gráfico
+
+# Cargando el gráfico a Chart Studio 
+#api_create(fig10, filename = "grafico10", sharing= "public") 
+#https://urldefense.com/v3/__https://plotly.com/*valeria12131/19/__;fg!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6shqRvCk$ 
+```
+
+
+
+<div id="example1">
+  <p>Por su parte, la deuda del SPNF per cápita aumentó 23.9% en 2020 (US\$820.8), alcanzando US\$4,260.8 por persona. </p>
+</div>
+
+<br>
+
+<br>
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE}
+fig11 <- plot_ly(datos_2020)
+fig11 <- fig11 %>% add_trace(x = ~Años, y = ~`Deuda Pública (per cápita) US$`, type = 'bar', name = 'Deuda Pública (per cápita) US$',
+            marker = list(color = '#2D5E71'))
+fig11 <- fig11 %>% layout(title = '<b>Deuda SPNF per cápita</b> \n(US$)',
+font= list(family = "Gill Sans MT", size=13),
+         hovermode = 'compare',
+          width = 700,
+         xaxis = list(title = "", tickangle = 270),
+         yaxis = list(side = 'left', title = '', showgrid = FALSE, zeroline = FALSE, automargin=T, range = c(0,4500)),
+legend = list(orientation = 'h', x = 0.32, y = -0.05)) %>% 
+config(displayModeBar = FALSE)
+
+
+fig11 <- fig11 %>% layout(
+   margin = list(l = 55, r = 20, b = 120, t = 30),
+   annotations = list(text = 'Fuente: BCRD, Crédito Público y ONE.',
+                     font = list(family = "Gill Sans MT", size = 12, color="grey"),
+                     showarrow = F,
+                     xref = 'paper', x = 0.0001,
+                     yref = 'paper', y = -0.265))
+
+
+# Función para alinear el gráfico en el centro
+ppc <- htmltools::div( fig11, align="center") 
+ppc  #Imprimiendo/mostrando el gráfico
+
+# Cargando el gráfico a Chart Studio 
+#api_create(fig11, filename = "grafico11", sharing= "public") 
+#https://urldefense.com/v3/__https://plotly.com/*valeria12131/21/__;fg!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea63z3rf7U$ 
+```
+
+
+<div id="example1">
+  <p>Al agregar la deuda del Banco Central, la deuda pública consolidada ascendió en 2020 a 69.1% del PIB. Del aumento observado durante el 2020, el 14.0% se explicó por el aumento de la deuda del Banco Central como porcentaje del PIB.</p>
+</div>
+
+<br>
+
+<br>
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE}
+fig12 <- plot_ly(datos_2020, x = ~Años, y = ~`Deuda SPNF (% PIB)`, type = 'bar', name = 'SPNF',
+            marker = list(color = '#548E7B'))
+
+fig12 <- fig12 %>% add_trace(y = ~BCRD, name  = 'BCRD', marker = list(color = '#9BC7A7'))
+
+fig12 <- fig12 %>% layout(title = '<b>Deuda pública consolidada</b> \n(% PIB)',
+font= list(family = "Gill Sans MT", size=13),
+         hovermode = 'compare',
+          width = 700,
+         xaxis = list(title = "", tickangle = 270),
+         barmode = 'stack',
+         yaxis = list(side = 'left', title = '', showgrid = FALSE, zeroline = FALSE, automargin=T),
+legend = list(orientation = 'h', x = 0.32, y = -0.15)) %>% 
+config(displayModeBar = FALSE)
+
+fig12 <- fig12 %>% layout(
+   margin = list(l = 55, r = 20, b = 120, t = 30),
+   annotations = list(text = 'Fuente: BCRD.',
+                     font = list(family = "Gill Sans MT", size = 12, color="grey"),
+                     showarrow = F,
+                     xref = 'paper', x = 0.0001,
+                     yref = 'paper', y = -0.33))
+
+
+# Función para alinear el gráfico en el centro
+ppc <- htmltools::div( fig12, align="center") 
+ppc  #Imprimiendo/mostrando el gráfico
+
+# Cargando el gráfico a Chart Studio 
+#api_create(fig12, filename = "grafico12", sharing= "public") 
+#https://urldefense.com/v3/__https://plotly.com/*valeria12131/23/__;fg!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6nVVmIaU$ 
+```
+
+<div id="example1">
+  <p>Las proyecciones del Economist Intelligence Unit sugieren que la deuda pública consolidada seguirá aumentando hasta alcanzar su máximo de 71.2% del PIB en 2022, año a partir del cual empezará a reducirse hasta situarse en 67.1% del PIB en 2025.</p>
+</div>
+
+<br>
+
+<br>
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE}
+
+fig13 <- plot_ly(datos_2008, x = ~Años, y = ~`Deuda Pública Consolidada (% PIB)`, name = 'Deuda Pública Consolidada', type = 'scatter', mode = 'lines+markers',
+            line = list(color = '#2D5E71', width = 4),
+      marker = list(color = '#2D5E71', size = 8, line=list(color = '#2D5E71', width = 3)))
+            
+            
+
+fig13 <- fig13 %>% add_trace(x = ~Años, y = ~`Proyección Economist Intelligence Unit`, name = 'Proyección Economist Intelligence Unit ', type = 'scatter', mode = 'lines+markers',
+            line = list(color = '#4C98AA', width = 4, dash = 'dot'),
+            marker = list(color = '#4C98AA', size = 8, line=list(color = '#4C98AA', width = 3)))
+
+
+#fig13 <- fig13 %>% add_trace(y = ~`Proyección Deuda (Plurianual)`, name = 'Proyección plurianual', line = list(color = '#407241', width = 4, dash = 'dot'))
+
+                           
+fig13 <- fig13 %>% layout(title = '<b>Deuda pública consolidada</b> \n(% PIB)',
+font= list(family = "Gill Sans MT", size=13),
+         hovermode = 'compare',
+         xaxis = list(title = ""),
+          width = 700,
+         barmode = 'stack',
+         yaxis = list(side = 'left', title = '', showgrid = FALSE, zeroline = TRUE, automargin=T, range = c(28,75)),
+legend = list(orientation = 'h', x = 0.12, y = -0.07)) %>% 
+config(displayModeBar = FALSE)
+
+
+fig13 <- fig13 %>% layout(
+   margin = list(l = 55, r = 20, b = 120, t = 30),
+   annotations = list(text = 'Fuente: BCRD y Proyecciones realizadas por Gladys Jiménez.',
+                     font = list(family = "Gill Sans MT", size = 12, color="grey"),
+                     showarrow = F,
+                     xref = 'paper', x = 0.0001,
+                     yref = 'paper', y = -0.27))
+
+
+# Función para alinear el gráfico en el centro
+ppc <- htmltools::div( fig13, align="center") 
+ppc  #Imprimiendo/mostrando el gráfico
+
+# Cargando el gráfico a Chart Studio 
+#api_create(fig13, filename = "grafico13", sharing= "public") 
+#https://urldefense.com/v3/__https://plotly.com/*valeria12131/25/__;fg!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6ntk3OIQ$ 
+```
+
+<div id="example1">
+  <p>Al incluir la reciente emisión de bonos soberanos en enero 2021 y la transacción de manejo de pasivos realizada en diciembre de 2020, los mayores vencimientos de bonos externos empezarían a partir del 2025. En el horizonte de vencimiento de bonos, resalta el período 2033-2040, debido a que no se contemplan vencimientos de bonos existentes, lo que genera oportunidades para nuevas colocaciones.</p>
+</div>
+
+<br>
+
+<br>
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE}
+fig14 <- plot_ly(datos_2060)
+fig14 <- fig14 %>% add_trace(x = ~Años, y = ~`Perfil Vencimiento Bonos Soberanos (Millones US$)`, type = 'bar', name = 'Perfil Vencimiento Bonos Soberanos (Millones US$)',
+            marker = list(color = '#2D5E71'))
+fig14 <- fig14 %>% layout(title = '<b>Perfil vencimiento bonos soberanos</b> \n(US$ millones)',
+font= list(family = "Gill Sans MT", size=13),
+         hovermode = 'compare',
+          width = 700,
+         xaxis = list(title = "", tickangle = 270),
+         yaxis = list(side = 'left', title = '', showgrid = FALSE, zeroline = FALSE, automargin=T, range = c(0,3500)),
+legend = list(orientation = 'h', x = 0.32, y = -0.05),
+shapes = list(
+               list(type = "rect",
+                    fillcolor = "grey", line = list(color = "grey"), opacity = 0.099,
+                    x0 = "7.55", x1="8.4", xref = "x",
+                    y0 = 4, y1 = 3066, yref = "y"),
+                list(type = "rect",
+                    fillcolor = "grey", line = list(color = "grey"), opacity = 0.099,
+                    x0 = "9.62", x1="10.41", xref = "Años",
+                    y0 = 4, y1 = 3066, yref = "y"),
+                list(type = "rect",
+                    fillcolor = "grey", line = list(color = "grey"), opacity = 0.099,
+                    x0 = "11.64", x1="12.43", xref = "x",
+                    y0 = 4, y1 = 3066, yref = "y"),
+                list(type = "rect",
+                    fillcolor = "grey", line = list(color = "grey"), opacity = 0.099,
+                    x0 = "16.64", x1="17.43", xref = "x",
+                    y0 = 4, y1 = 3066, yref = "y"),
+                list(type = "rect",
+                    fillcolor = "grey", line = list(color = "grey"), opacity = 0.099,
+                    x0 = "13.6", x1="14.43", xref = "x",
+                    y0 = 4, y1 = 3066, yref = "y"),
+                list(type = "rect",
+                    fillcolor = "grey", line = list(color = "grey"), opacity = 0.099,
+                    x0 = "19.59", x1="20.4", xref = "x",
+                    y0 = 4, y1 = 3066, yref = "y"))) %>% 
+config(displayModeBar = FALSE)
+
+fig14 <- fig14 %>% layout(
+   margin = list(l = 55, r = 20, b = 120, t = 30),
+   annotations = list(text = 'Fuente: Crédito Público.',
+                     font = list(family = "Gill Sans MT", size = 12, color="grey"),
+                     showarrow = F,
+                     xref = 'paper', x = 0.0001,
+                     yref = 'paper', y = -0.3))
+
+
+# Función para alinear el gráfico en el centro
+ppc <- htmltools::div( fig14, align="center") 
+ppc  #Imprimiendo/mostrando el gráfico
+
+# Cargando el gráfico a Chart Studio 
+#api_create(fig14, filename = "grafico14", sharing= "public") 
+#https://urldefense.com/v3/__https://plotly.com/*valeria12131/27/__;fg!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea62e9039g$ 
+```
+
+
+# <b>Panorama Internacional</b>
+
+<br>
+<br>
+<f size="6"><s style="color:white">/</f></s>
+<p align="center"><font size="6.0"><span style="color: #2D5E71;">**Panorama general de la deuda del SPNF**</span></font></p></wk> 
+<p align="center"><font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Departamento de Programación Monetaria y Estudios Económicos</span></font></p></wk> 
+<p align="center"><font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Subdirección de Asuntos Fiscales</span></font></p></wk> 
+<p align="center"><font size="4.5"> <span style="color: #595959;"><wk style=line-height:0.6>Abril 2021</span></font></p></wk> 
+<br>
+<br>
+
+
+
+
+<div id="example1">
+  <p>En 2020, la deuda del gobierno central de República Dominicana se situó por encima de la media de Latinoamérica, siendo el cuarto país de la región con  el mayor aumento como porcentaje del PIB en comparación con 2019.</p>
+</div>
+
+<br>
+
+<br>
+
+
+```{r, echo=FALSE, include=TRUE, comment="", warning=FALSE, message=FALSE} 
+
+#----------------------------------------------------------------
+# <<<<<---------------------- MAPA ----------------------->>>>>>
+#----------------------------------------------------------------
+#Fuente: https://plotly.com/r/reference/layout/geo/
+
+#1. Los mapas en plotly se extraen por el código ISOa3 de cada país o por las coordenadas. La primera opción es la más sencilla. Una alternativa rápita para obtenerlo es cargar la base de datos y hacer un merge con una ya existente extraida de internet que tiene los nombres. Es importante confirmar que los nombres de los países de la base de datos cargada esten iguales a los de la base extraida de internet, porque sino no se unirán. En este caso por tratarse de una base de datos corta, se adregó el código directamente en excel. 
+
+                      #-------------------------------------------------
+                      #---->>> Ejemplo para unir ambas bases <<<<-------
+                      #-------------------------------------------------
+
+
+#---->>> Base de datos con todos los paises del mundo extraida de internet <<<<-------
+#df2 <- read.csv('https://urldefense.com/v3/__https://raw.githubusercontent.com/plotly/datasets/master/2014_world_gdp_with_codes.csv__;!!MXQJGYEVCjwd!DrypWQLxJzM1fIYe5hoKueQXVKfhYEHsqfwkE6qn6aD587Gp_Zv0UhTiYiPXjIO9Sea6ipYMOVM$ ') 
+
+#Vaciamos la variable que tiene los datos para rellenarla con nuestros datos
+#df2$GDP..BILLIONS.<-0
+
+#Cambiamos el nombre de las variables
+#colnames(df2)<-c("Paises","Tasa","CODE")
+
+#Cargamos la base de datos con la información que deseamos que tenga el mapa
+#df1 <- read_excel("Base de Datos Infografía Deuda.xlsx", sheet = "Internacional")
+#df1 <- rapply(object = df1, f = round, classes = "numeric", how = "replace", digits = 2)   #Redondea a 2 decimales
+
+#Unimos nuestra base de datos con la base de datos que tiene los códigos de todos los países. Esto se hace de este modo porque si solo cargamos la base de datos con los países de interes luego no se graficaran los demás países. El elemento por el cual uniremos será el código de georreferencia "CODE". 
+#df<-merge(x=df2, y=df1, by= c('CODE'), all.y =TRUE)
+
+#Limpiamos un poco la base para que las celdas en blanco las rellene y grafique con cero. 
+#df$`Deuda Gob. General (% PIB) 2019`[is.na(df$`Deuda Gob. General (% PIB) 2019`)] <- 0
+
+#df$`Deuda Gob. General (% PIB) 2020`[is.na(df$`Deuda Gob. General (% PIB) 2020`)] <- 0
+
+#df$`Deuda Gob. General (% PIB) Cambio`[is.na(df$`Deuda Gob. General (% PIB) Cambio`)] <- 0
+
+#Uno vez establecida la base de datos, se procede a realizar el mapa empleando funcionalidades del paquete *ggplot*. 
+
+
+
+                      #-------------------------------------------------
+                      #   ---->>> Mapa de américa latina <<<<-------
+                      #-------------------------------------------------
+#Base de datos 
+df1 <- read_excel("Base de Datos Infografía Deuda.xlsx", sheet = "Internacional")
+df1 <- rapply(object = df1, f = round, classes = "numeric", how = "replace", digits = 2)   #Redondea a 2 decimales
+
+
+#Estableciendo el color de los contornos del mapa
+l <- list(color = toRGB("#808080"), width = 0.8)
+
+#Especificar las opciones del mapa (sin cuadro y sin mostrar las lines costeras)
+g <- list(showframe = FALSE,                              # Cuadro borde del mapa
+          showcoastlines = FALSE,                         # Lineas de costa
+          projection = list(type = 'Mercator'),             # Estilo del mapa
+          fitbounds= "locations",                          # Ajustando el mapa para que salgan solo los países con data
+          showland= TRUE,
+          landcolor="white",
+          showcountries= FALSE,
+          showbackground= FALSE,
+          lonaxis = list(range = c(-200, 10))
+          ) 
+
+
+# Creando variable que contenga el texto cuando se pase por encima del gráfico
+popup <- paste0(
+  df1$País,
+  "<br><b>2020: </b>",
+  format(df1$`Deuda Gob. General (% PIB) 2020`, big.mark = ","),
+  "<br><b>2019: </b>",
+  df1$`Deuda Gob. General (% PIB) 2019`,
+  "<br><b>Cambio: </b>",
+  round(df1$`Deuda Gob. General (% PIB) Cambio`, 2),
+  "<extra></extra>"                                      #Evita que aparezca trace 0 when hoovering
+  )
+
+
+#Generar el mapa 
+fig15 <- plot_geo(df1)         #Generar mapa con la base de datos de interés (df)
+fig15 <- fig15 %>% add_trace(   #Agregando los parámetros del mapa
+    #Variable z (con los datos de interes), color con la escala de la variables y en tonos azules
+    z = ~`Deuda Gob. General (% PIB) 2020`, color = ~`Deuda Gob. General (% PIB) 2020`, colors = 'Blues', 
+    #Texto de los países, código de ubicación y lineas de contorno (la lista "l" creadas arriba)    
+    text = ~País,                                 
+    locations = ~CODE, 
+    marker = list(line = l),       
+    hovertemplate=popup,                      #Texto que aparece cuando se pasa el mouse encima
+    showscale = FALSE                         #ocultar la barra de leyenda       
+    )
+
+
+
+#Agregar barra de colores con la escala de la variable
+fig15 <- fig15 %>% colorbar(title = 'Porcentaje del PIB', tickprefix = '%')
+fig15 <- fig15 %>% layout(title = '<b>Deuda del Gobierno general, América Latina 2020</b>\n(% PIB)', 
+                          font= list(family = "Gill Sans MT", size=13),
+                          geo = g, width = 750, heigth= 5000, autosize=TRUE, 
+                          plot_bgcolor='rgba(0,0,0,0)', 
+                          layout.grid=10, 
+                          type= "heatmap", align="center")%>% 
+config(displayModeBar = FALSE)
+
+
+fig15 <- fig15 %>% layout(
+   margin = list(l = 0, r = 0, b = 25, t = 30),
+   annotations = list(text = 'Fuente: Fondo Monetario Internacional.',
+                     font = list(family = "Gill Sans MT", size = 12, color="grey"),
+                     showarrow = F,
+                     xref = 'paper', x = 0.0001,
+                     yref = 'paper', y = 0))
+
+fig15 <- fig15 %>% layout(
+   margin = list(l = 0, r = 30, b = 25, t = 30),
+   annotations = list(text = '<b>Promedio AL</b>\n<b>2020:</b> 62.16% PIB\n<b>2019:</b> 51.49% PIB',
+                     font = list(family = "Gill Sans MT", size = 14, color="#3F94C9"),
+                     showarrow = F,
+                     xref = 'paper', x = 0.96,
+                     yref = 'paper', y = 0.5))
+
+fig15  #Imprimiendo/mostrando el gráfico
+ 
+```
+
+
+
+
